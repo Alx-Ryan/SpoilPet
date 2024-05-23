@@ -7,18 +7,41 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3D4FE4972BFE6CB9008E7FD9 /* CustomTabBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D4FE4962BFE6CB9008E7FD9 /* CustomTabBar.swift */; };
+		3D4FE4992BFEB1FB008E7FD9 /* CustomTabBarContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D4FE4982BFEB1FB008E7FD9 /* CustomTabBarContainer.swift */; };
+		3D4FE49B2BFEB5FD008E7FD9 /* TabBarItemsPreferenceKey.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D4FE49A2BFEB5FD008E7FD9 /* TabBarItemsPreferenceKey.swift */; };
+		3D4FE49E2BFEBCD4008E7FD9 /* TabBarItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D4FE49D2BFEBCD4008E7FD9 /* TabBarItem.swift */; };
+		3D4FE4A02BFFBF46008E7FD9 /* AddPetButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D4FE49F2BFFBF46008E7FD9 /* AddPetButton.swift */; };
 		3D6F85172BE5826300C12B15 /* SpoilPetApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D6F85162BE5826300C12B15 /* SpoilPetApp.swift */; };
 		3D6F85192BE5826300C12B15 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D6F85182BE5826300C12B15 /* ContentView.swift */; };
 		3D6F851B2BE5826400C12B15 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3D6F851A2BE5826400C12B15 /* Assets.xcassets */; };
 		3D6F851E2BE5826400C12B15 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3D6F851D2BE5826400C12B15 /* Preview Assets.xcassets */; };
+		3D6F85292BE5834F00C12B15 /* ColorEXT.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D6F85282BE5834F00C12B15 /* ColorEXT.swift */; };
+		3D6F852C2BE5838D00C12B15 /* SwiftfulRouting in Frameworks */ = {isa = PBXBuildFile; productRef = 3D6F852B2BE5838D00C12B15 /* SwiftfulRouting */; };
+		3D6F852F2BE5839500C12B15 /* SwiftfulUI in Frameworks */ = {isa = PBXBuildFile; productRef = 3D6F852E2BE5839500C12B15 /* SwiftfulUI */; };
+		3D6F85312BE5871A00C12B15 /* PetProfile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D6F85302BE5871A00C12B15 /* PetProfile.swift */; };
+		3D6F85342BE5895900C12B15 /* SDWebImageSwiftUI in Frameworks */ = {isa = PBXBuildFile; productRef = 3D6F85332BE5895900C12B15 /* SDWebImageSwiftUI */; };
+		3D6F85362BE5896C00C12B15 /* ImageLoaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D6F85352BE5896C00C12B15 /* ImageLoaderView.swift */; };
+		3D6F85382BE589A100C12B15 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D6F85372BE589A100C12B15 /* Constants.swift */; };
+		3D8834312BE6EC7B007764CD /* NekoImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D8834302BE6EC7B007764CD /* NekoImage.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		3D4FE4962BFE6CB9008E7FD9 /* CustomTabBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTabBar.swift; sourceTree = "<group>"; };
+		3D4FE4982BFEB1FB008E7FD9 /* CustomTabBarContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTabBarContainer.swift; sourceTree = "<group>"; };
+		3D4FE49A2BFEB5FD008E7FD9 /* TabBarItemsPreferenceKey.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarItemsPreferenceKey.swift; sourceTree = "<group>"; };
+		3D4FE49D2BFEBCD4008E7FD9 /* TabBarItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarItem.swift; sourceTree = "<group>"; };
+		3D4FE49F2BFFBF46008E7FD9 /* AddPetButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddPetButton.swift; sourceTree = "<group>"; };
 		3D6F85132BE5826300C12B15 /* SpoilPet.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SpoilPet.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3D6F85162BE5826300C12B15 /* SpoilPetApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpoilPetApp.swift; sourceTree = "<group>"; };
 		3D6F85182BE5826300C12B15 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		3D6F851A2BE5826400C12B15 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		3D6F851D2BE5826400C12B15 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		3D6F85282BE5834F00C12B15 /* ColorEXT.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorEXT.swift; sourceTree = "<group>"; };
+		3D6F85302BE5871A00C12B15 /* PetProfile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PetProfile.swift; sourceTree = "<group>"; };
+		3D6F85352BE5896C00C12B15 /* ImageLoaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageLoaderView.swift; sourceTree = "<group>"; };
+		3D6F85372BE589A100C12B15 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		3D8834302BE6EC7B007764CD /* NekoImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NekoImage.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -26,12 +49,26 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3D6F85342BE5895900C12B15 /* SDWebImageSwiftUI in Frameworks */,
+				3D6F852F2BE5839500C12B15 /* SwiftfulUI in Frameworks */,
+				3D6F852C2BE5838D00C12B15 /* SwiftfulRouting in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		3D4FE49C2BFEBC3F008E7FD9 /* CustomTabBarFiles */ = {
+			isa = PBXGroup;
+			children = (
+				3D4FE4962BFE6CB9008E7FD9 /* CustomTabBar.swift */,
+				3D4FE49D2BFEBCD4008E7FD9 /* TabBarItem.swift */,
+				3D4FE4982BFEB1FB008E7FD9 /* CustomTabBarContainer.swift */,
+				3D4FE49A2BFEB5FD008E7FD9 /* TabBarItemsPreferenceKey.swift */,
+			);
+			path = CustomTabBarFiles;
+			sourceTree = "<group>";
+		};
 		3D6F850A2BE5826300C12B15 = {
 			isa = PBXGroup;
 			children = (
@@ -52,7 +89,8 @@
 			isa = PBXGroup;
 			children = (
 				3D6F85162BE5826300C12B15 /* SpoilPetApp.swift */,
-				3D6F85182BE5826300C12B15 /* ContentView.swift */,
+				3D6F85242BE582C400C12B15 /* MainViews */,
+				3D6F85262BE582DB00C12B15 /* Helpers */,
 				3D6F851A2BE5826400C12B15 /* Assets.xcassets */,
 				3D6F851C2BE5826400C12B15 /* Preview Content */,
 			);
@@ -65,6 +103,44 @@
 				3D6F851D2BE5826400C12B15 /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		3D6F85242BE582C400C12B15 /* MainViews */ = {
+			isa = PBXGroup;
+			children = (
+				3D6F85182BE5826300C12B15 /* ContentView.swift */,
+				3D6F85302BE5871A00C12B15 /* PetProfile.swift */,
+				3D6F85252BE582D200C12B15 /* SubViews */,
+			);
+			path = MainViews;
+			sourceTree = "<group>";
+		};
+		3D6F85252BE582D200C12B15 /* SubViews */ = {
+			isa = PBXGroup;
+			children = (
+				3D4FE49F2BFFBF46008E7FD9 /* AddPetButton.swift */,
+			);
+			path = SubViews;
+			sourceTree = "<group>";
+		};
+		3D6F85262BE582DB00C12B15 /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				3D6F85272BE582E600C12B15 /* EXT */,
+				3D6F85352BE5896C00C12B15 /* ImageLoaderView.swift */,
+				3D6F85372BE589A100C12B15 /* Constants.swift */,
+				3D8834302BE6EC7B007764CD /* NekoImage.swift */,
+				3D4FE49C2BFEBC3F008E7FD9 /* CustomTabBarFiles */,
+			);
+			path = Helpers;
+			sourceTree = "<group>";
+		};
+		3D6F85272BE582E600C12B15 /* EXT */ = {
+			isa = PBXGroup;
+			children = (
+				3D6F85282BE5834F00C12B15 /* ColorEXT.swift */,
+			);
+			path = EXT;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -83,6 +159,11 @@
 			dependencies = (
 			);
 			name = SpoilPet;
+			packageProductDependencies = (
+				3D6F852B2BE5838D00C12B15 /* SwiftfulRouting */,
+				3D6F852E2BE5839500C12B15 /* SwiftfulUI */,
+				3D6F85332BE5895900C12B15 /* SDWebImageSwiftUI */,
+			);
 			productName = SpoilPet;
 			productReference = 3D6F85132BE5826300C12B15 /* SpoilPet.app */;
 			productType = "com.apple.product-type.application";
@@ -111,6 +192,11 @@
 				Base,
 			);
 			mainGroup = 3D6F850A2BE5826300C12B15;
+			packageReferences = (
+				3D6F852A2BE5838D00C12B15 /* XCRemoteSwiftPackageReference "SwiftfulRouting" */,
+				3D6F852D2BE5839500C12B15 /* XCRemoteSwiftPackageReference "SwiftfulUI" */,
+				3D6F85322BE5895900C12B15 /* XCRemoteSwiftPackageReference "SDWebImageSwiftUI" */,
+			);
 			productRefGroup = 3D6F85142BE5826300C12B15 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -138,7 +224,17 @@
 			buildActionMask = 2147483647;
 			files = (
 				3D6F85192BE5826300C12B15 /* ContentView.swift in Sources */,
+				3D6F85312BE5871A00C12B15 /* PetProfile.swift in Sources */,
+				3D4FE4992BFEB1FB008E7FD9 /* CustomTabBarContainer.swift in Sources */,
+				3D6F85292BE5834F00C12B15 /* ColorEXT.swift in Sources */,
+				3D4FE49E2BFEBCD4008E7FD9 /* TabBarItem.swift in Sources */,
+				3D8834312BE6EC7B007764CD /* NekoImage.swift in Sources */,
+				3D4FE4972BFE6CB9008E7FD9 /* CustomTabBar.swift in Sources */,
+				3D4FE4A02BFFBF46008E7FD9 /* AddPetButton.swift in Sources */,
+				3D6F85362BE5896C00C12B15 /* ImageLoaderView.swift in Sources */,
 				3D6F85172BE5826300C12B15 /* SpoilPetApp.swift in Sources */,
+				3D6F85382BE589A100C12B15 /* Constants.swift in Sources */,
+				3D4FE49B2BFEB5FD008E7FD9 /* TabBarItemsPreferenceKey.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -344,6 +440,51 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		3D6F852A2BE5838D00C12B15 /* XCRemoteSwiftPackageReference "SwiftfulRouting" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/SwiftfulThinking/SwiftfulRouting.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.3.2;
+			};
+		};
+		3D6F852D2BE5839500C12B15 /* XCRemoteSwiftPackageReference "SwiftfulUI" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/SwiftfulThinking/SwiftfulUI.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 1.2.0;
+			};
+		};
+		3D6F85322BE5895900C12B15 /* XCRemoteSwiftPackageReference "SDWebImageSwiftUI" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/SDWebImage/SDWebImageSwiftUI.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 3.0.4;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		3D6F852B2BE5838D00C12B15 /* SwiftfulRouting */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 3D6F852A2BE5838D00C12B15 /* XCRemoteSwiftPackageReference "SwiftfulRouting" */;
+			productName = SwiftfulRouting;
+		};
+		3D6F852E2BE5839500C12B15 /* SwiftfulUI */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 3D6F852D2BE5839500C12B15 /* XCRemoteSwiftPackageReference "SwiftfulUI" */;
+			productName = SwiftfulUI;
+		};
+		3D6F85332BE5895900C12B15 /* SDWebImageSwiftUI */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 3D6F85322BE5895900C12B15 /* XCRemoteSwiftPackageReference "SDWebImageSwiftUI" */;
+			productName = SDWebImageSwiftUI;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 3D6F850B2BE5826300C12B15 /* Project object */;
 }
