@@ -12,6 +12,10 @@
 		3D4FE49B2BFEB5FD008E7FD9 /* TabBarItemsPreferenceKey.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D4FE49A2BFEB5FD008E7FD9 /* TabBarItemsPreferenceKey.swift */; };
 		3D4FE49E2BFEBCD4008E7FD9 /* TabBarItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D4FE49D2BFEBCD4008E7FD9 /* TabBarItem.swift */; };
 		3D4FE4A02BFFBF46008E7FD9 /* AddPetButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D4FE49F2BFFBF46008E7FD9 /* AddPetButton.swift */; };
+		3D4FE4A22BFFE527008E7FD9 /* ScheduleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D4FE4A12BFFE527008E7FD9 /* ScheduleView.swift */; };
+		3D4FE4A42BFFE87B008E7FD9 /* CalendarHelpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D4FE4A32BFFE87B008E7FD9 /* CalendarHelpers.swift */; };
+		3D4FE4A62BFFEA01008E7FD9 /* DateEXT.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D4FE4A52BFFEA01008E7FD9 /* DateEXT.swift */; };
+		3D4FE4A82BFFEEE1008E7FD9 /* ViewEXT.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D4FE4A72BFFEEE1008E7FD9 /* ViewEXT.swift */; };
 		3D6F85172BE5826300C12B15 /* SpoilPetApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D6F85162BE5826300C12B15 /* SpoilPetApp.swift */; };
 		3D6F85192BE5826300C12B15 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D6F85182BE5826300C12B15 /* ContentView.swift */; };
 		3D6F851B2BE5826400C12B15 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3D6F851A2BE5826400C12B15 /* Assets.xcassets */; };
@@ -32,6 +36,10 @@
 		3D4FE49A2BFEB5FD008E7FD9 /* TabBarItemsPreferenceKey.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarItemsPreferenceKey.swift; sourceTree = "<group>"; };
 		3D4FE49D2BFEBCD4008E7FD9 /* TabBarItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarItem.swift; sourceTree = "<group>"; };
 		3D4FE49F2BFFBF46008E7FD9 /* AddPetButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddPetButton.swift; sourceTree = "<group>"; };
+		3D4FE4A12BFFE527008E7FD9 /* ScheduleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScheduleView.swift; sourceTree = "<group>"; };
+		3D4FE4A32BFFE87B008E7FD9 /* CalendarHelpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarHelpers.swift; sourceTree = "<group>"; };
+		3D4FE4A52BFFEA01008E7FD9 /* DateEXT.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateEXT.swift; sourceTree = "<group>"; };
+		3D4FE4A72BFFEEE1008E7FD9 /* ViewEXT.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewEXT.swift; sourceTree = "<group>"; };
 		3D6F85132BE5826300C12B15 /* SpoilPet.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SpoilPet.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3D6F85162BE5826300C12B15 /* SpoilPetApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpoilPetApp.swift; sourceTree = "<group>"; };
 		3D6F85182BE5826300C12B15 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -110,6 +118,7 @@
 			children = (
 				3D6F85182BE5826300C12B15 /* ContentView.swift */,
 				3D6F85302BE5871A00C12B15 /* PetProfile.swift */,
+				3D4FE4A12BFFE527008E7FD9 /* ScheduleView.swift */,
 				3D6F85252BE582D200C12B15 /* SubViews */,
 			);
 			path = MainViews;
@@ -131,6 +140,7 @@
 				3D6F85372BE589A100C12B15 /* Constants.swift */,
 				3D8834302BE6EC7B007764CD /* NekoImage.swift */,
 				3D4FE49C2BFEBC3F008E7FD9 /* CustomTabBarFiles */,
+				3D4FE4A32BFFE87B008E7FD9 /* CalendarHelpers.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -139,6 +149,8 @@
 			isa = PBXGroup;
 			children = (
 				3D6F85282BE5834F00C12B15 /* ColorEXT.swift */,
+				3D4FE4A52BFFEA01008E7FD9 /* DateEXT.swift */,
+				3D4FE4A72BFFEEE1008E7FD9 /* ViewEXT.swift */,
 			);
 			path = EXT;
 			sourceTree = "<group>";
@@ -227,13 +239,17 @@
 				3D6F85312BE5871A00C12B15 /* PetProfile.swift in Sources */,
 				3D4FE4992BFEB1FB008E7FD9 /* CustomTabBarContainer.swift in Sources */,
 				3D6F85292BE5834F00C12B15 /* ColorEXT.swift in Sources */,
+				3D4FE4A82BFFEEE1008E7FD9 /* ViewEXT.swift in Sources */,
+				3D4FE4A62BFFEA01008E7FD9 /* DateEXT.swift in Sources */,
 				3D4FE49E2BFEBCD4008E7FD9 /* TabBarItem.swift in Sources */,
 				3D8834312BE6EC7B007764CD /* NekoImage.swift in Sources */,
 				3D4FE4972BFE6CB9008E7FD9 /* CustomTabBar.swift in Sources */,
 				3D4FE4A02BFFBF46008E7FD9 /* AddPetButton.swift in Sources */,
 				3D6F85362BE5896C00C12B15 /* ImageLoaderView.swift in Sources */,
+				3D4FE4A42BFFE87B008E7FD9 /* CalendarHelpers.swift in Sources */,
 				3D6F85172BE5826300C12B15 /* SpoilPetApp.swift in Sources */,
 				3D6F85382BE589A100C12B15 /* Constants.swift in Sources */,
+				3D4FE4A22BFFE527008E7FD9 /* ScheduleView.swift in Sources */,
 				3D4FE49B2BFEB5FD008E7FD9 /* TabBarItemsPreferenceKey.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

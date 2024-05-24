@@ -30,7 +30,7 @@ struct CustomTabBarContainer<Content:View>: View {
                         UnevenRoundedRectangle(
                             topLeadingRadius: 10,
                             topTrailingRadius: 10
-                        ).fill(.ultraThinMaterial).ignoresSafeArea()
+                        ).fill(.thinMaterial).ignoresSafeArea()
                     )
 
         }

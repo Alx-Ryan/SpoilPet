@@ -12,7 +12,7 @@ import SDWebImageSwiftUI
 struct ContentView: View {
     
     @StateObject var vm2 = CombineVM()
-    @State private var tabSelection: TabBarItem = .pets
+    @State private var tabSelection: TabBarItem = .schedule
     
     var resizingMode: ContentMode = .fill
     
@@ -109,7 +109,7 @@ struct ContentView: View {
                         }
                         
                     }
-                    .listRowBackground(Color.highlight)
+                    .listRowBackground(Color.cell)
                     .listRowInsets(EdgeInsets(top: 4, leading: 4, bottom: 4, trailing: 4))
                     
                     
@@ -138,45 +138,5 @@ struct ContentView: View {
 }
 
 #Preview {
-    
-        //    let tabs: [TabBarItem] = [
-        //        TabBarItem(
-        //            iconName: "calendar",
-        //            title: "Schedule",
-        //            SelectedColor: Color.secondaryText
-        //        ),
-        //        TabBarItem(
-        //            iconName: "pawprint",
-        //            title: "Pets",
-        //            SelectedColor: Color.secondaryText
-        //        ),
-        //        TabBarItem(
-        //            iconName: "gear",
-        //            title: "Settings",
-        //            SelectedColor: Color.secondaryText
-        //        )
-        //    ]
-    
-        // let tabs: [TabBarItem] = [.schedule, .pets, .settings]
-    
     return ContentView()
 }
-
-
-    //TabView() {
-    //    NavigationStack {
-    //        ZStack {
-    //            Color.background.ignoresSafeArea()
-    //            VStack {
-    //                listView
-    //                
-    //            }
-    //            
-    //            .padding()
-    //        }
-    //    }
-    //    .tabItem {
-    //        Image(systemName: "pawprint")
-    //        Text("Pets")
-    //    }
-    //    }
