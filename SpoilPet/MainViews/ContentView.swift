@@ -12,6 +12,8 @@ struct ContentView: View {
     
     @State private var tabSelection: TabBarItem = .schedule
     
+    @AppStorage("colorScheme", store: UserDefaults(suiteName: "group.com.AlexRyan.SpoilPet")) var colorScheme: Int = 0
+    
     var resizingMode: ContentMode = .fill
     
     var body: some View {
@@ -26,11 +28,12 @@ struct ContentView: View {
                 .tabBarItem(tab: .pets, selection: $tabSelection)
             
                 //MARK: Third tab item
-            Color.red
+            SettingsView()
                 .tabBarItem(tab: .settings, selection: $tabSelection)
             
         }
         .background(Color.background)
+        .preferredColorScheme(colorScheme == 1 ? .light : colorScheme == 2 ? .dark : nil)
     }
 }
 

@@ -10,11 +10,12 @@ import SwiftUI
 struct AddPetButton: View {
     
     @State var animate: Bool = false
+    @State var toggleSheet = false
     
     var body: some View {
         
         Button { 
-            
+            toggleSheet.toggle()
         } label: { 
             Image(systemName: "pawprint")
                 .foregroundStyle(Color.text)
@@ -34,6 +35,9 @@ struct AddPetButton: View {
         .multilineTextAlignment(.center)
         .padding(40)
         .onAppear(perform: addAnimation)
+        .sheet(isPresented: $toggleSheet, content: {
+            Text("Add Pet")
+        })
         
     }
     
