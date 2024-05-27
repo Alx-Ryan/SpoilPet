@@ -36,7 +36,7 @@ struct AddPetButton: View {
         .padding(40)
         .onAppear(perform: addAnimation)
         .sheet(isPresented: $toggleSheet, content: {
-            Text("Add Pet")
+            PetDetailsSheet()
         })
         
     }

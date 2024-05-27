@@ -19,3 +19,17 @@ struct SettingsSubviewModifier: ViewModifier {
             .dynamicTypeSize(...DynamicTypeSize.xxxLarge)
     }
 }
+
+struct PetDetailsViewModifier: ViewModifier {
+    func body(content: Content) -> some View {
+        content
+            .padding()
+            .background(Color.cell)
+            .clipShape(RoundedRectangle(cornerRadius: 10))
+            .padding(.horizontal)
+            .padding(.vertical, 6)
+    }
+}
+
+
+    

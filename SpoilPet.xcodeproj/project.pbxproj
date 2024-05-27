@@ -19,8 +19,11 @@
 		3D4FE4AA2C00F2FD008E7FD9 /* PetsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D4FE4A92C00F2FC008E7FD9 /* PetsView.swift */; };
 		3D4FE4AC2C014253008E7FD9 /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D4FE4AB2C014253008E7FD9 /* SettingsView.swift */; };
 		3D4FE4AE2C0149DB008E7FD9 /* SettingsAppearanceView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D4FE4AD2C0149DB008E7FD9 /* SettingsAppearanceView.swift */; };
-		3D4FE4B02C014A6A008E7FD9 /* SettingsSubviewModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D4FE4AF2C014A6A008E7FD9 /* SettingsSubviewModifier.swift */; };
+		3D4FE4B02C014A6A008E7FD9 /* ViewModifiers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D4FE4AF2C014A6A008E7FD9 /* ViewModifiers.swift */; };
 		3D4FE4B22C014AD7008E7FD9 /* SettingsBackButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D4FE4B12C014AD7008E7FD9 /* SettingsBackButton.swift */; };
+		3D4FE4B52C03A33E008E7FD9 /* PetDetailsSheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D4FE4B42C03A33D008E7FD9 /* PetDetailsSheet.swift */; };
+		3D4FE4B72C04F434008E7FD9 /* SpeciesList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D4FE4B62C04F434008E7FD9 /* SpeciesList.swift */; };
+		3D4FE4B92C0508B6008E7FD9 /* SexList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D4FE4B82C0508B6008E7FD9 /* SexList.swift */; };
 		3D6F85172BE5826300C12B15 /* SpoilPetApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D6F85162BE5826300C12B15 /* SpoilPetApp.swift */; };
 		3D6F85192BE5826300C12B15 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D6F85182BE5826300C12B15 /* ContentView.swift */; };
 		3D6F851B2BE5826400C12B15 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3D6F851A2BE5826400C12B15 /* Assets.xcassets */; };
@@ -48,8 +51,11 @@
 		3D4FE4A92C00F2FC008E7FD9 /* PetsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PetsView.swift; sourceTree = "<group>"; };
 		3D4FE4AB2C014253008E7FD9 /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
 		3D4FE4AD2C0149DB008E7FD9 /* SettingsAppearanceView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsAppearanceView.swift; sourceTree = "<group>"; };
-		3D4FE4AF2C014A6A008E7FD9 /* SettingsSubviewModifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsSubviewModifier.swift; sourceTree = "<group>"; };
+		3D4FE4AF2C014A6A008E7FD9 /* ViewModifiers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewModifiers.swift; sourceTree = "<group>"; };
 		3D4FE4B12C014AD7008E7FD9 /* SettingsBackButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsBackButton.swift; sourceTree = "<group>"; };
+		3D4FE4B42C03A33D008E7FD9 /* PetDetailsSheet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PetDetailsSheet.swift; sourceTree = "<group>"; };
+		3D4FE4B62C04F434008E7FD9 /* SpeciesList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpeciesList.swift; sourceTree = "<group>"; };
+		3D4FE4B82C0508B6008E7FD9 /* SexList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SexList.swift; sourceTree = "<group>"; };
 		3D6F85132BE5826300C12B15 /* SpoilPet.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SpoilPet.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3D6F85162BE5826300C12B15 /* SpoilPetApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpoilPetApp.swift; sourceTree = "<group>"; };
 		3D6F85182BE5826300C12B15 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -148,6 +154,7 @@
 			isa = PBXGroup;
 			children = (
 				3D4FE49F2BFFBF46008E7FD9 /* AddPetButton.swift */,
+				3D4FE4B42C03A33D008E7FD9 /* PetDetailsSheet.swift */,
 				3D4FE4AD2C0149DB008E7FD9 /* SettingsAppearanceView.swift */,
 			);
 			path = SubViews;
@@ -162,8 +169,10 @@
 				3D6F85302BE5871A00C12B15 /* PetProfile.swift */,
 				3D6F85372BE589A100C12B15 /* Constants.swift */,
 				3D4FE4A32BFFE87B008E7FD9 /* CalendarHelpers.swift */,
-				3D4FE4AF2C014A6A008E7FD9 /* SettingsSubviewModifier.swift */,
+				3D4FE4AF2C014A6A008E7FD9 /* ViewModifiers.swift */,
 				3D4FE4B12C014AD7008E7FD9 /* SettingsBackButton.swift */,
+				3D4FE4B62C04F434008E7FD9 /* SpeciesList.swift */,
+				3D4FE4B82C0508B6008E7FD9 /* SexList.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -262,10 +271,12 @@
 				3D6F85312BE5871A00C12B15 /* PetProfile.swift in Sources */,
 				3D4FE4992BFEB1FB008E7FD9 /* CustomTabBarContainer.swift in Sources */,
 				3D4FE4AC2C014253008E7FD9 /* SettingsView.swift in Sources */,
+				3D4FE4B72C04F434008E7FD9 /* SpeciesList.swift in Sources */,
 				3D6F85292BE5834F00C12B15 /* ColorEXT.swift in Sources */,
-				3D4FE4B02C014A6A008E7FD9 /* SettingsSubviewModifier.swift in Sources */,
+				3D4FE4B02C014A6A008E7FD9 /* ViewModifiers.swift in Sources */,
 				3D4FE4A82BFFEEE1008E7FD9 /* ViewEXT.swift in Sources */,
 				3D4FE4A62BFFEA01008E7FD9 /* DateEXT.swift in Sources */,
+				3D4FE4B52C03A33E008E7FD9 /* PetDetailsSheet.swift in Sources */,
 				3D4FE49E2BFEBCD4008E7FD9 /* TabBarItem.swift in Sources */,
 				3D4FE4AE2C0149DB008E7FD9 /* SettingsAppearanceView.swift in Sources */,
 				3D8834312BE6EC7B007764CD /* NekoImage.swift in Sources */,
@@ -276,6 +287,7 @@
 				3D4FE4A42BFFE87B008E7FD9 /* CalendarHelpers.swift in Sources */,
 				3D6F85172BE5826300C12B15 /* SpoilPetApp.swift in Sources */,
 				3D6F85382BE589A100C12B15 /* Constants.swift in Sources */,
+				3D4FE4B92C0508B6008E7FD9 /* SexList.swift in Sources */,
 				3D4FE4A22BFFE527008E7FD9 /* ScheduleView.swift in Sources */,
 				3D4FE49B2BFEB5FD008E7FD9 /* TabBarItemsPreferenceKey.swift in Sources */,
 				3D4FE4AA2C00F2FD008E7FD9 /* PetsView.swift in Sources */,
