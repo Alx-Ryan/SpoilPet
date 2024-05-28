@@ -24,6 +24,7 @@
 		3D4FE4B52C03A33E008E7FD9 /* PetDetailsSheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D4FE4B42C03A33D008E7FD9 /* PetDetailsSheet.swift */; };
 		3D4FE4B72C04F434008E7FD9 /* SpeciesList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D4FE4B62C04F434008E7FD9 /* SpeciesList.swift */; };
 		3D4FE4B92C0508B6008E7FD9 /* SexList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D4FE4B82C0508B6008E7FD9 /* SexList.swift */; };
+		3D4FE4BB2C063E45008E7FD9 /* WaterPetReminderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D4FE4BA2C063E44008E7FD9 /* WaterPetReminderView.swift */; };
 		3D6F85172BE5826300C12B15 /* SpoilPetApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D6F85162BE5826300C12B15 /* SpoilPetApp.swift */; };
 		3D6F85192BE5826300C12B15 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D6F85182BE5826300C12B15 /* ContentView.swift */; };
 		3D6F851B2BE5826400C12B15 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3D6F851A2BE5826400C12B15 /* Assets.xcassets */; };
@@ -56,6 +57,7 @@
 		3D4FE4B42C03A33D008E7FD9 /* PetDetailsSheet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PetDetailsSheet.swift; sourceTree = "<group>"; };
 		3D4FE4B62C04F434008E7FD9 /* SpeciesList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpeciesList.swift; sourceTree = "<group>"; };
 		3D4FE4B82C0508B6008E7FD9 /* SexList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SexList.swift; sourceTree = "<group>"; };
+		3D4FE4BA2C063E44008E7FD9 /* WaterPetReminderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WaterPetReminderView.swift; sourceTree = "<group>"; };
 		3D6F85132BE5826300C12B15 /* SpoilPet.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SpoilPet.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3D6F85162BE5826300C12B15 /* SpoilPetApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpoilPetApp.swift; sourceTree = "<group>"; };
 		3D6F85182BE5826300C12B15 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -156,6 +158,7 @@
 				3D4FE49F2BFFBF46008E7FD9 /* AddPetButton.swift */,
 				3D4FE4B42C03A33D008E7FD9 /* PetDetailsSheet.swift */,
 				3D4FE4AD2C0149DB008E7FD9 /* SettingsAppearanceView.swift */,
+				3D4FE4BA2C063E44008E7FD9 /* WaterPetReminderView.swift */,
 			);
 			path = SubViews;
 			sourceTree = "<group>";
@@ -280,6 +283,7 @@
 				3D4FE49E2BFEBCD4008E7FD9 /* TabBarItem.swift in Sources */,
 				3D4FE4AE2C0149DB008E7FD9 /* SettingsAppearanceView.swift in Sources */,
 				3D8834312BE6EC7B007764CD /* NekoImage.swift in Sources */,
+				3D4FE4BB2C063E45008E7FD9 /* WaterPetReminderView.swift in Sources */,
 				3D4FE4B22C014AD7008E7FD9 /* SettingsBackButton.swift in Sources */,
 				3D4FE4972BFE6CB9008E7FD9 /* CustomTabBar.swift in Sources */,
 				3D4FE4A02BFFBF46008E7FD9 /* AddPetButton.swift in Sources */,
