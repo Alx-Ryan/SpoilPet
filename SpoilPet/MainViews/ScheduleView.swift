@@ -14,7 +14,7 @@ struct ScheduleView: View {
         // WeekSlider
     @State var weekSlider: [[Date.WeekDay]] = []
     @State var currentWeekIndex: Int = 1
-    // Animation Namespace
+        // Animation Namespace
     @Namespace private var animation
     
     @State private var createWeek: Bool = false
@@ -27,7 +27,7 @@ struct ScheduleView: View {
                 VStack(alignment: .leading, spacing: 0) {
                     VStack(alignment: .leading) {
                         
-                        // Week Slider
+                            // Week Slider
                         TabView(selection: $currentWeekIndex,
                                 content:  {
                             ForEach(weekSlider.indices, id: \.self) { index in
@@ -45,7 +45,7 @@ struct ScheduleView: View {
                     .padding()
                     .frame(maxWidth: .infinity)
                     .background {
-                        Rectangle().fill(.gray.opacity(0.1))
+                        Rectangle().fill(.hero.opacity(0.8))
                             .clipShape(.rect(bottomLeadingRadius: 30, bottomTrailingRadius: 30))
                             .ignoresSafeArea()
                     }
@@ -55,7 +55,12 @@ struct ScheduleView: View {
                         }
                     }
                         //body
-                    Text("Hello, World!")
+                    VStack {
+                        WaterPetReminderView()
+                        
+                        
+                    }
+                    .padding()
                 }
                 .vSpacing(.top)
                 .frame(maxWidth: .infinity)
@@ -90,13 +95,13 @@ struct ScheduleView: View {
                         .font(.callout)
                         .fontWeight(.medium)
                         .textScale(.secondary)
-                        .foregroundStyle(isSameDate(day.date, currentDate) ? .text : Color.gray)
+                        .foregroundStyle(isSameDate(day.date, currentDate) ? .text : Color.text)
                     
                     Text(day.date.format("dd"))
                         //.font(.system(size: 20))
                         .frame(width: 50, height: 55)
-                        .foregroundStyle(isSameDate(day.date, currentDate) ? .text : Color.gray)
-                        
+                        .foregroundStyle(isSameDate(day.date, currentDate) ? .text : Color.text)
+                    
                 }
                 .background(content: {
                     if isSameDate(day.date, currentDate) {

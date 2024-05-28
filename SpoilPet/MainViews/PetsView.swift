@@ -1,9 +1,9 @@
-//
-//  PetsView.swift
-//  SpoilPet
-//
-//  Created by Alex Ryan on 5/24/24.
-//
+    //
+    //  PetsView.swift
+    //  SpoilPet
+    //
+    //  Created by Alex Ryan on 5/24/24.
+    //
 
 import SwiftUI
 import SDWebImageSwiftUI
@@ -14,7 +14,7 @@ struct PetsView: View {
     
     let namesArray = ["Miku Nakano", "Mai Sakurajima", "Kurisu Makise", "Himeko", "Naomi", "Akira", "Mikasa Ackerman", "Sakura", "Hinata Hyuga", "Asuna Yuuki", "Rias Gremory", "Yor Forger", "Chizuru Mizuhara", "Erza Scarlet", "Nico Robin"]
     
-
+    
     
     var body: some View {
         NavigationStack {
@@ -75,11 +75,11 @@ struct PetsView: View {
                                                 .font(.subheadline)
                                                 .fontWeight(.semibold)
                                                 .foregroundStyle(Color.text.opacity(0.9))
-                                            .padding(.horizontal, 12)
+                                                .padding(.horizontal, 12)
                                             
                                             Image(systemName: breed ? "checkmark" : "xmark")
                                                 .foregroundStyle(breed ? Color.green : Color.red)
-                                                
+                                            
                                         }
                                         .padding(.horizontal, 8)
                                     }
@@ -93,7 +93,7 @@ struct PetsView: View {
                                     }
                                     .font(.footnote)
                                     .padding(4)
-                                    .background(RoundedRectangle(cornerRadius: 4).fill(Color.mutedGreen))
+                                    .background(RoundedRectangle(cornerRadius: 4).fill(Color.hero))
                                     
                                         // Weight
                                     HStack {
@@ -102,7 +102,7 @@ struct PetsView: View {
                                     }
                                     .font(.footnote)
                                     .padding(4)
-                                    .background(RoundedRectangle(cornerRadius: 4).fill(Color.mutedGreen))
+                                    .background(RoundedRectangle(cornerRadius: 4).fill(Color.hero))
                                     
                                 }
                             }
@@ -113,13 +113,13 @@ struct PetsView: View {
                     .listRowBackground(Color.cell)
                     .listRowInsets(EdgeInsets(top: 4, leading: 4, bottom: 4, trailing: 4))
                     
-                    
                 }
-                .shadow(radius: 5, x: 0, y: 4)
                 .scrollContentBackground(.hidden)
                 .foregroundStyle(Color.text)
-                .navigationTitle("My Pets")
             }
+            .navigationTitle("My Pets")
+            .toolbarBackground(.visible, for: .navigationBar)
+            .toolbarBackground(.hero, for: .navigationBar)
         }
         .overlay(addPetButton)
     }

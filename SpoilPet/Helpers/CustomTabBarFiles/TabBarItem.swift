@@ -34,9 +34,9 @@ enum TabBarItem: Hashable {
     
     var SelectedColor: Color {
         switch self {
-            case .schedule: return Color.highlight
-            case .pets: return Color.highlight
-            case .settings: return Color.highlight
+            case .schedule: return Color.accent
+            case .pets: return Color.accent
+            case .settings: return Color.accent
         }
     }
     

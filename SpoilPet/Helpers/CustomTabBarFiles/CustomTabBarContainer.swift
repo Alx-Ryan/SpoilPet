@@ -57,7 +57,7 @@ struct CustomTabBarContainer<Content:View>: View {
 //        TabBarItem(
 //            iconName: "calendar",
 //            title: "Schedule",
-//            SelectedColor: Color.secondaryText
+//            SelectedColor: Color.spoilPetSecondary
 //        ),
 //        TabBarItem(
 //            iconName: "pawprint",
@@ -67,7 +67,7 @@ struct CustomTabBarContainer<Content:View>: View {
 //        TabBarItem(
 //            iconName: "gear",
 //            title: "Settings",
-//            SelectedColor: Color.secondaryText
+//            SelectedColor: Color.spoilPetSecondary
 //        )
 //    ]
 //

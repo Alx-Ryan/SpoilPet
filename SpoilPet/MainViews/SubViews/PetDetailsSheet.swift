@@ -46,10 +46,10 @@ struct PetDetailsSheet: View {
     @State var name = ""
     @State var breed = ""
     
-    // species vars
+        // species vars
     @State private var speciesDropdown: Bool = false
     @State var speciesSelection = species.dog
-    // sex vars
+        // sex vars
     @State private var sex = Sex.other
     @State private var sexDropdown: Bool = false
     
@@ -116,7 +116,7 @@ struct PetDetailsSheet: View {
             .font(.headline)
             .bold()
             .padding(6)
-            .foregroundStyle(.accent)
+            .foregroundStyle(.hero)
             .background(.white)
             .clipShape(Circle())
             .padding()
@@ -126,7 +126,7 @@ struct PetDetailsSheet: View {
         PhotosPicker(selection: $photoVM.imageSelection, matching: .images) { 
             Image(systemName: "photo")
                 .padding(8)
-                .foregroundStyle(.accent)
+                .foregroundStyle(.hero)
                 .shadow(radius: 10)
                 .background(.touchPadding)
         } 
@@ -137,8 +137,8 @@ struct PetDetailsSheet: View {
         VStack(alignment: .leading, spacing: 8) {
             Text("Name")
                 .font(.headline)
-                .foregroundStyle(.highlight)
-            TextField(text: $name) { 
+                .foregroundStyle(.hero)
+            TextField(text: $name) {
                 Text("Enter Name")
                     .foregroundStyle(.text.opacity(0.5))
             }
@@ -156,7 +156,7 @@ struct PetDetailsSheet: View {
         VStack(alignment: .leading, spacing: 8) {
             Text("Species")
                 .font(.headline)
-                .foregroundStyle(.highlight)
+                .foregroundStyle(.hero)
             
             Menu {
                 Picker(selection: $speciesSelection) {
@@ -172,7 +172,7 @@ struct PetDetailsSheet: View {
                 Image(systemName: "chevron.backward")
                     .font(.headline)
                     .bold()
-                    .foregroundStyle(.highlight)
+                    .foregroundStyle(.hero)
                     .rotationEffect(.degrees(speciesDropdown ? -90 : 0))
                     .animation(.easeOut, value: speciesDropdown)
             }
@@ -194,13 +194,13 @@ struct PetDetailsSheet: View {
         VStack(alignment: .leading, spacing: 8) {
             Text("Sex")
                 .font(.headline)
-                .foregroundStyle(.highlight)
+                .foregroundStyle(.hero)
             
             Menu {
                 Picker(selection: $sex) {
                     ForEach(Sex.allCases) { sex in
-                            Text(sex.name)
-                                .tag(sex)                        
+                        Text(sex.name)
+                            .tag(sex)                        
                     }
                 } label: {}
             } label: {
@@ -213,7 +213,7 @@ struct PetDetailsSheet: View {
                 Image(systemName: "chevron.backward")
                     .font(.headline)
                     .bold()
-                    .foregroundStyle(.highlight)
+                    .foregroundStyle(Color.hero)
                     .rotationEffect(.degrees(sexDropdown ? -90 : 0))
                     .animation(.easeOut, value: sexDropdown)
             }
@@ -235,8 +235,8 @@ struct PetDetailsSheet: View {
         VStack(alignment: .leading, spacing: 8) {
             Text("Breed")
                 .font(.headline)
-                .foregroundStyle(.highlight)
-            TextField(text: $breed) { 
+                .foregroundStyle(.hero)
+            TextField(text: $breed) {
                 Text("Enter Breed")
                     .foregroundStyle(.text.opacity(0.5))
             }

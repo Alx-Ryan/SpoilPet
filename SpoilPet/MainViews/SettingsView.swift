@@ -1,9 +1,9 @@
-//
-//  SettingsView.swift
-//  SpoilPet
-//
-//  Created by Alex Ryan on 5/24/24.
-//
+    //
+    //  SettingsView.swift
+    //  SpoilPet
+    //
+    //  Created by Alex Ryan on 5/24/24.
+    //
 
 import SwiftUI
 
@@ -44,13 +44,16 @@ struct SettingsView: View {
                             }
                         }
                         .padding(10)
-                        .background(Color.cell, in: RoundedRectangle(cornerRadius: 9))
-                        .shadow(radius: 10)
+                        .background(Color.cell, in: RoundedRectangle(cornerRadius: 10))
+                        
                     }
                 }
                 .padding()
+                .toolbarBackground(.visible, for: .navigationBar)
+                .toolbarBackground(.hero, for: .navigationBar)
             }
             .navigationTitle("Settings")
+
         }
     }
 }
@@ -88,14 +91,14 @@ struct SettingsRowView: View {
             if optionalText != nil {
                 Text(optionalText!)
                     .font(.system(.body, design: .rounded))
-                    .foregroundColor(.highlight.opacity(0.6))
+                    .foregroundColor(.hero)
                     .layoutPriority(1)
                     .padding(.trailing, -8)
             }
             
             Image(systemName: "chevron.forward")
                 .font(.system(.subheadline, design: .rounded))
-                .foregroundColor(.highlight.opacity(0.6))
+                .foregroundColor(.hero)
         }
         .frame(maxWidth: .infinity)
         .dynamicTypeSize(...DynamicTypeSize.xxxLarge)

@@ -30,7 +30,7 @@ struct CustomTabBar: View {
 //                    TabBarItem(
 //                        iconName: "calendar",
 //                        title: "Schedule",
-//                        SelectedColor: Color.secondaryText
+//                        SelectedColor: Color.spoilPetSecondary
 //                    ),
 //                    TabBarItem(
 //                        iconName: "pawprint",
@@ -91,7 +91,7 @@ extension CustomTabBar {
             Text(tab.title)
                 .font(.system(size: 10, weight: .semibold, design: .rounded))
         }
-        .foregroundStyle(selection == tab ? tab.SelectedColor : Color.secondaryText)
+        .foregroundStyle(selection == tab ? tab.SelectedColor : Color.text)
         .padding(.vertical, 8)
         .frame(maxWidth: .infinity)
         //.background(selection == tab ? tab.SelectedColor.opacity(0.15) : Color.clear)

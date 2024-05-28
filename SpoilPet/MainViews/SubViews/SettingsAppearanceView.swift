@@ -1,9 +1,9 @@
-//
-//  SettingsAppearanceView.swift
-//  SpoilPet
-//
-//  Created by Alex Ryan on 5/24/24.
-//
+    //
+    //  SettingsAppearanceView.swift
+    //  SpoilPet
+    //
+    //  Created by Alex Ryan on 5/24/24.
+    //
 
 import SwiftUI
 
@@ -43,7 +43,7 @@ struct SettingsAppearanceView: View {
                         if colorScheme == option {
                             Image(systemName: "checkmark")
                                 .font(.system(.subheadline, design: .rounded))
-                                .foregroundColor(Color.highlight.opacity(0.6))
+                                .foregroundColor(Color.accent.opacity(0.6))
                                 .matchedGeometryEffect(id: "tick", in: animation)
                         }
                     }
@@ -67,7 +67,7 @@ struct SettingsAppearanceView: View {
                 }
             }
             .padding(.horizontal, 15)
-            .background(Color.cell, in: RoundedRectangle(cornerRadius: 9))
+            .background(Color.spoilPetSecondary, in: RoundedRectangle(cornerRadius: 9))
             .shadow(radius: 10)
         }
         .modifier(SettingsSubviewModifier())

@@ -1,9 +1,9 @@
-//
-//  AddPetButton.swift
-//  SpoilPet
-//
-//  Created by Alex Ryan on 5/23/24.
-//
+    //
+    //  AddPetButton.swift
+    //  SpoilPet
+    //
+    //  Created by Alex Ryan on 5/23/24.
+    //
 
 import SwiftUI
 
@@ -22,11 +22,11 @@ struct AddPetButton: View {
                 .font(.title)
                 .bold()
                 .frame(width: 55, height: 55)
-                .background(animate ? Color.secondaryText : Color.accent)
+                .background(animate ? Color.accent : Color.hero)
                 .clipShape(Circle())
         }
         .padding(.horizontal, animate ? 30 : 50)
-        .shadow(color: animate ? Color.secondaryText.opacity(0.7) : Color.accent.opacity(0.7),
+        .shadow(color: animate ? Color.accent.opacity(0.7) : Color.hero.opacity(0.7),
                 radius: animate ? 30 : 10,
                 y: animate ? 40 : 20)
         .scaleEffect(animate ? 1.2 : 1)
