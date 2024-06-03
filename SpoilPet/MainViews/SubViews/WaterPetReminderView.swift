@@ -15,14 +15,15 @@ struct WaterPetReminderView: View {
                     .init(color: Color(hex: "#209cff"), location: 0),
                     .init(color: Color(hex: "#68e0cf"), location: 1),
                 ], startPoint: .topLeading, endPoint: .bottomTrailing))
-                .frame(width: .infinity, height: 80)
                 .shadow(radius: 3)
-            
+
             Text("Don't forget to refill water bowl 🚰")
                 .font(.title3)
                 .bold()
                 .foregroundStyle(.text)
         }
+        .frame(maxWidth: .infinity)
+        .frame(height: 80)
     }
 }
 

@@ -29,7 +29,7 @@ struct SettingsView: View {
                 
                 ScrollView {
                     VStack(spacing: 8) {
-                        
+                        Spacer(minLength: 8)
                         Text("GENERAL")
                             .font(.system(.footnote, design: .rounded).weight(.semibold))
                             .foregroundColor(Color.text)
@@ -48,12 +48,12 @@ struct SettingsView: View {
                         
                     }
                 }
-                .padding()
-                .toolbarBackground(.visible, for: .navigationBar)
-                .toolbarBackground(.hero, for: .navigationBar)
+                .padding(.horizontal)
+
             }
             .navigationTitle("Settings")
-
+            .toolbarBackground(.visible, for: .navigationBar)
+            .toolbarBackground(.hero, for: .navigationBar)
         }
     }
 }

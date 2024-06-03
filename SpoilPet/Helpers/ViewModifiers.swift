@@ -31,5 +31,34 @@ struct PetDetailsViewModifier: ViewModifier {
     }
 }
 
+struct PetCellImageModifier: ViewModifier {
+    var sexSymbol: String
+    var sexColor: Color
+    func body(content: Content) -> some View {
+        content
+            .scaledToFill()
+            .frame(maxWidth: 100)
+            .frame(minWidth: 0)
+            .frame(height: 120)
+            .clipShape(RoundedRectangle(cornerRadius: 10))
+            .allowsHitTesting(false)
+            .overlay(
+                Circle()
+                    .fill(Color.white)
+                    .frame(width: 30, height: 30)
+                    .offset(x: 30, y: 40)
+                    .overlay(
+                        Text(sexSymbol)
+                            .font(.title2)
+                            .bold()
+                            .foregroundStyle(sexColor)
+                            .frame(width: 30, height: 30)
+                            .offset(x: 30, y: 40)
+                            .shadow(radius: 10, y: 5)
+                    )
+            )
+    }
+}
+
 
     

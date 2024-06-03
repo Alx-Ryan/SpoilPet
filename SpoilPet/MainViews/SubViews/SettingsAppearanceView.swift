@@ -67,7 +67,7 @@ struct SettingsAppearanceView: View {
                 }
             }
             .padding(.horizontal, 15)
-            .background(Color.spoilPetSecondary, in: RoundedRectangle(cornerRadius: 9))
+            .background(Color.cell, in: RoundedRectangle(cornerRadius: 9))
             .shadow(radius: 10)
         }
         .modifier(SettingsSubviewModifier())

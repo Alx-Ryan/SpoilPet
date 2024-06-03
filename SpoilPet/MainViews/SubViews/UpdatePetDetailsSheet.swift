@@ -1,50 +1,46 @@
-    //
-    //  PetDetailsSheet.swift
-    //  SpoilPet
-    //
-    //  Created by Alex Ryan on 5/26/24.
-    //
+//
+//  UpdatePetDetailsSheet.swift
+//  SpoilPet
+//
+//  Created by Alex Ryan on 5/31/24.
+//
 
 import SwiftUI
 import SwiftData
-import PhotosUI
 import SDWebImageSwiftUI
+import _PhotosUI_SwiftUI
 
-
-struct PetDetailsSheet: View {
-    @Environment(\.modelContext) var context
+struct UpdatePetDetailsSheet: View {
     @Environment(\.dismiss) var dismiss
 
     @StateObject var photoVM = PhotoPickerVM()
-    @State private var selectedPhoto: PhotosPickerItem?
+    @Bindable var pet: PetProfile
 
-        // species vars
+//        // species vars
     @State private var speciesDropdown: Bool = false
     @State var speciesSelection = Species.other
         // sex vars
     @State private var sex = Sex.other
     @State private var sexDropdown: Bool = false
-    @State private var name: String = ""
-    @State private var breed: String = ""
-    @State private var age: Int?
-    @State private var weight: Int?
-
-    //let pet: PetProfile
+//    @State private var name: String = ""
+//    @State private var breed: String = ""
+//    @State private var age: Int?
+//    @State private var weight: Int?
 
     var body: some View {
         ZStack {
             Color.background.ignoresSafeArea()
             ScrollView {
                 VStack(spacing: 0) {
-                    
+
                     heroImage
-                    
+
                     nameField
 
                     speciesPicker
-                    
+
                     sexPicker
-                    
+                        
                     BreedField
 
                     AgeField
@@ -55,17 +51,28 @@ struct PetDetailsSheet: View {
             .scrollIndicators(.hidden)
         }
     }
-    
+
     private var heroImage: some View {
         ZStack {
-            if let image = photoVM.selectedImage {
+            if let image = UIImage(data: pet.petPhoto ?? Data()) {
                 Image(uiImage: image)
                     .resizable()
                     .scaledToFill()
                     .frame(minHeight: 200)
                     .frame(maxWidth: 380)
                     .frame(height: 400)
-                
+                    .onChange(of: photoVM.selectedImage,  {
+                        pet.petPhoto = photoVM.selectedImage?.sd_imageData()
+                    })
+
+            } else if let image = photoVM.selectedImage {
+                Image(uiImage: image)
+                    .resizable()
+                    .scaledToFill()
+                    .frame(minHeight: 200)
+                    .frame(maxWidth: 380)
+                    .frame(height: 400)
+
             } else {
                 HStack(spacing: 0) {
                     ZStack {
@@ -81,7 +88,7 @@ struct PetDetailsSheet: View {
                     .clipShape(RoundedRectangle(cornerRadius: 10))
                     .allowsHitTesting(false)
                 }
-               }
+            }
 
             xButton
                 .frame(maxWidth: .infinity, maxHeight: 400, alignment: .topLeading)
@@ -92,12 +99,13 @@ struct PetDetailsSheet: View {
             saveButton
                 .frame(maxWidth: .infinity, maxHeight: 400, alignment: .topTrailing)
                 .onTapGesture {
-                    let pet = PetProfile(petName: name, petPhoto: photoVM.selectedImage?.sd_imageData(), breed: breed, sex: sex, species: speciesSelection, age: age, weight: weight)
-                    context.insert(pet)
-
+                   // let pet = PetProfile(petPhoto: photoVM.selectedImage?.sd_imageData())
+                    pet.petPhoto = photoVM.selectedImage?.sd_imageData()
+                    pet.species = speciesSelection
+                    pet.sex = sex
                     dismiss()
                 }
-            
+
             photoButton
                 .frame(maxWidth: .infinity, maxHeight: 400, alignment: .bottomTrailing)
                 // Image ZStack
@@ -107,9 +115,8 @@ struct PetDetailsSheet: View {
         .frame(height: 400)
         .clipShape(RoundedRectangle(cornerRadius: 10))
         .padding(8)
-        //.onChange(of: selectedPhoto, loadPhoto)
     }
-    
+
     private var xButton: some View {
         Image(systemName: "xmark")
             .font(.headline)
@@ -133,27 +140,27 @@ struct PetDetailsSheet: View {
     }
 
     private var photoButton: some View {
-        PhotosPicker(selection: $photoVM.imageSelection, matching: .images) { 
+        PhotosPicker(selection: $photoVM.imageSelection, matching: .images) {
             Image(systemName: "pawprint.circle")
                 .font(.title)
                 .padding(8)
                 .foregroundStyle(.hero)
                 .shadow(radius: 10)
                 .background(.touchPadding)
-        } 
+        }
         .padding(8)
     }
-    
+
     private var nameField: some View {
         VStack(alignment: .leading, spacing: 8) {
             Text("Name")
                 .font(.headline)
                 .foregroundStyle(.hero)
-            TextField(text: $name) {
+            TextField(text: $pet.petName) {
                 Text("Enter Name")
                     .foregroundStyle(.text.opacity(0.5))
             }
-            .font(.title2)
+            .font(.title)
             .bold()
             .padding(4)
             .background(Color.background.opacity(0.6))
@@ -163,13 +170,13 @@ struct PetDetailsSheet: View {
         }
         .modifier(PetDetailsViewModifier())
     }
-    
+
     private var speciesPicker: some View {
         VStack(alignment: .leading, spacing: 8) {
             Text("Species")
                 .font(.headline)
                 .foregroundStyle(.hero)
-            
+
             Menu {
                 Picker(selection: $speciesSelection) {
                     ForEach(Species.allCases) { species in
@@ -179,7 +186,7 @@ struct PetDetailsSheet: View {
                 } label: {}
             } label: {
                 Text(speciesSelection.name)
-                
+
                 Spacer()
                 Image(systemName: "chevron.backward")
                     .font(.headline)
@@ -201,54 +208,54 @@ struct PetDetailsSheet: View {
         }
         .modifier(PetDetailsViewModifier())
     }
-    
-    private var sexPicker: some View {
-        VStack(alignment: .leading, spacing: 8) {
-            Text("Sex")
-                .font(.headline)
-                .foregroundStyle(.hero)
-            
-            Menu {
-                Picker(selection: $sex) {
-                    ForEach(Sex.allCases) { sex in
-                        Text(sex.name)
-                            .tag(sex)                        
+
+            private var sexPicker: some View {
+                VStack(alignment: .leading, spacing: 8) {
+                    Text("Sex")
+                        .font(.headline)
+                        .foregroundStyle(.hero)
+        
+                    Menu {
+                        Picker(selection: $sex) {
+                            ForEach(Sex.allCases) { sex in
+                                Text(sex.name)
+                                    .tag(sex)
+                            }
+                        } label: {}
+                    } label: {
+                        HStack(spacing: 4) {
+                            Text(sex.name)
+                            Text(sex.symbol)
+                                .foregroundStyle(sex.symbolColor.gradient)
+                        }
+                        Spacer()
+                        Image(systemName: "chevron.backward")
+                            .font(.headline)
+                            .bold()
+                            .foregroundStyle(Color.hero)
+                            .rotationEffect(.degrees(sexDropdown ? -90 : 0))
+                            .animation(.easeOut, value: sexDropdown)
                     }
-                } label: {}
-            } label: {
-                HStack(spacing: 4) {
-                    Text(sex.name)
-                    Text(sex.symbol)
-                        .foregroundStyle(sex.symbolColor.gradient)
-                }
-                Spacer()
-                Image(systemName: "chevron.backward")
-                    .font(.headline)
+                    .font(.title2)
                     .bold()
-                    .foregroundStyle(Color.hero)
-                    .rotationEffect(.degrees(sexDropdown ? -90 : 0))
-                    .animation(.easeOut, value: sexDropdown)
+                    .padding(4)
+                    .foregroundStyle(.text)
+                    .background(Color.background.opacity(0.6))
+                    .clipShape(RoundedRectangle(cornerRadius: 6))
+                    .id(sex)
+                    .onTapGesture {
+                        sexDropdown.toggle()
+                    }
+                }
+                .modifier(PetDetailsViewModifier())
             }
-            .font(.title2)
-            .bold()
-            .padding(4)
-            .foregroundStyle(.text)
-            .background(Color.background.opacity(0.6))
-            .clipShape(RoundedRectangle(cornerRadius: 6))
-            .id(sex)
-            .onTapGesture {
-                sexDropdown.toggle()
-            }
-        }
-        .modifier(PetDetailsViewModifier())
-    }
-    
+        
     private var BreedField: some View {
         VStack(alignment: .leading, spacing: 8) {
             Text("Breed")
                 .font(.headline)
                 .foregroundStyle(.hero)
-            TextField(text: $breed) {
+            TextField(text: $pet.breed) {
                 Text("Enter Breed")
                     .foregroundStyle(.text.opacity(0.5))
             }
@@ -257,9 +264,6 @@ struct PetDetailsSheet: View {
             .padding(4)
             .background(Color.background.opacity(0.6))
             .clipShape(RoundedRectangle(cornerRadius: 6))
-            .lineLimit(1)
-            .minimumScaleFactor(0.8)
-
 
         }
         .modifier(PetDetailsViewModifier())
@@ -270,7 +274,7 @@ struct PetDetailsSheet: View {
             Text("Age")
                 .font(.headline)
                 .foregroundStyle(.hero)
-            TextField(value: $age, format: .number) {
+            TextField(value: $pet.age, format: .number) {
                 Text("Enter Age")
                     .keyboardType(.numberPad)
                     .foregroundStyle(.text.opacity(0.5))
@@ -290,7 +294,7 @@ struct PetDetailsSheet: View {
             Text("Weight")
                 .font(.headline)
                 .foregroundStyle(.hero)
-            TextField(value: $weight, format: .number) {
+            TextField(value: $pet.weight, format: .number) {
                 Text("Enter Weight")
                     .keyboardType(.numberPad)
                     .foregroundStyle(.text.opacity(0.5))
@@ -304,17 +308,8 @@ struct PetDetailsSheet: View {
         }
         .modifier(PetDetailsViewModifier())
     }
-
-//    func loadPhoto() {
-//        Task { @MainActor in
-//            pet.petPhoto = try await selectedPhoto?.loadTransferable(type: Data.self)
-//        }
-//    }
-
 }
 
-#Preview {
-
- PetDetailsSheet()
-
-}
+//#Preview {
+//    UpdatePetDetailsSheet(, pet: <#PetProfile#>)
+//}

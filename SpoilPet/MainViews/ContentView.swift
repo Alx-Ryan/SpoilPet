@@ -14,8 +14,6 @@ struct ContentView: View {
     
     @AppStorage("colorScheme", store: UserDefaults(suiteName: "group.com.AlexRyan.SpoilPet")) var colorScheme: Int = 0
     
-        // @Query var pets: [PetProfile]
-    
     var resizingMode: ContentMode = .fill
     
     var body: some View {

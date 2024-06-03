@@ -7,9 +7,9 @@
 
 import SwiftUI
 
-enum species: Hashable, CaseIterable, Identifiable {
-    case cat, dog, fish, bird, turtle, hamster, rabbit, guineaPig, snake, lizard, frog, gerbil, rat, mouse, hedgehog
-    
+enum Species: Hashable, CaseIterable, Identifiable, Codable {
+    case cat, dog, fish, bird, turtle, hamster, rabbit, guineaPig, snake, lizard, frog, gerbil, rat, mouse, hedgehog, other
+
     var id: Self {self}
     
     var name: String {
@@ -44,6 +44,8 @@ enum species: Hashable, CaseIterable, Identifiable {
                 return "Mouse"
             case .hedgehog:
                 return "Hedgehog"
+            case .other:
+                return "Other"
         }
     }
 }

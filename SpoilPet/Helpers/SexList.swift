@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-enum Sex: Hashable, CaseIterable, Identifiable {
+enum Sex: Hashable, CaseIterable, Identifiable, Codable {
     case male, female, other
     
     var id: Self { self }
@@ -30,7 +30,7 @@ enum Sex: Hashable, CaseIterable, Identifiable {
             case .female:
                 return "♀️"
             case .other:
-                return " ?"
+                return "?"
         }
     }
     

@@ -37,6 +37,10 @@
 		3D6F85362BE5896C00C12B15 /* ImageLoaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D6F85352BE5896C00C12B15 /* ImageLoaderView.swift */; };
 		3D6F85382BE589A100C12B15 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D6F85372BE589A100C12B15 /* Constants.swift */; };
 		3D8834312BE6EC7B007764CD /* NekoImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D8834302BE6EC7B007764CD /* NekoImage.swift */; };
+		3DDF99382C0A609B0023B03C /* PetCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DDF99372C0A609B0023B03C /* PetCell.swift */; };
+		3DDF993A2C0A62DC0023B03C /* UpdatePetDetailsSheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DDF99392C0A62DC0023B03C /* UpdatePetDetailsSheet.swift */; };
+		3DDF993C2C0BDC980023B03C /* Previewer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DDF993B2C0BDC980023B03C /* Previewer.swift */; };
+		3DDF993E2C0BF2720023B03C /* PhotoPickerVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DDF993D2C0BF2720023B03C /* PhotoPickerVM.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -68,6 +72,10 @@
 		3D6F85352BE5896C00C12B15 /* ImageLoaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageLoaderView.swift; sourceTree = "<group>"; };
 		3D6F85372BE589A100C12B15 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		3D8834302BE6EC7B007764CD /* NekoImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NekoImage.swift; sourceTree = "<group>"; };
+		3DDF99372C0A609B0023B03C /* PetCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PetCell.swift; sourceTree = "<group>"; };
+		3DDF99392C0A62DC0023B03C /* UpdatePetDetailsSheet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpdatePetDetailsSheet.swift; sourceTree = "<group>"; };
+		3DDF993B2C0BDC980023B03C /* Previewer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Previewer.swift; sourceTree = "<group>"; };
+		3DDF993D2C0BF2720023B03C /* PhotoPickerVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoPickerVM.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -157,8 +165,10 @@
 			children = (
 				3D4FE49F2BFFBF46008E7FD9 /* AddPetButton.swift */,
 				3D4FE4B42C03A33D008E7FD9 /* PetDetailsSheet.swift */,
+				3DDF99392C0A62DC0023B03C /* UpdatePetDetailsSheet.swift */,
 				3D4FE4AD2C0149DB008E7FD9 /* SettingsAppearanceView.swift */,
 				3D4FE4BA2C063E44008E7FD9 /* WaterPetReminderView.swift */,
+				3DDF99372C0A609B0023B03C /* PetCell.swift */,
 			);
 			path = SubViews;
 			sourceTree = "<group>";
@@ -176,6 +186,8 @@
 				3D4FE4B12C014AD7008E7FD9 /* SettingsBackButton.swift */,
 				3D4FE4B62C04F434008E7FD9 /* SpeciesList.swift */,
 				3D4FE4B82C0508B6008E7FD9 /* SexList.swift */,
+				3DDF993B2C0BDC980023B03C /* Previewer.swift */,
+				3DDF993D2C0BF2720023B03C /* PhotoPickerVM.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -273,6 +285,7 @@
 				3D6F85192BE5826300C12B15 /* ContentView.swift in Sources */,
 				3D6F85312BE5871A00C12B15 /* PetProfile.swift in Sources */,
 				3D4FE4992BFEB1FB008E7FD9 /* CustomTabBarContainer.swift in Sources */,
+				3DDF993C2C0BDC980023B03C /* Previewer.swift in Sources */,
 				3D4FE4AC2C014253008E7FD9 /* SettingsView.swift in Sources */,
 				3D4FE4B72C04F434008E7FD9 /* SpeciesList.swift in Sources */,
 				3D6F85292BE5834F00C12B15 /* ColorEXT.swift in Sources */,
@@ -285,6 +298,8 @@
 				3D8834312BE6EC7B007764CD /* NekoImage.swift in Sources */,
 				3D4FE4BB2C063E45008E7FD9 /* WaterPetReminderView.swift in Sources */,
 				3D4FE4B22C014AD7008E7FD9 /* SettingsBackButton.swift in Sources */,
+				3DDF993A2C0A62DC0023B03C /* UpdatePetDetailsSheet.swift in Sources */,
+				3DDF99382C0A609B0023B03C /* PetCell.swift in Sources */,
 				3D4FE4972BFE6CB9008E7FD9 /* CustomTabBar.swift in Sources */,
 				3D4FE4A02BFFBF46008E7FD9 /* AddPetButton.swift in Sources */,
 				3D6F85362BE5896C00C12B15 /* ImageLoaderView.swift in Sources */,
@@ -295,6 +310,7 @@
 				3D4FE4A22BFFE527008E7FD9 /* ScheduleView.swift in Sources */,
 				3D4FE49B2BFEB5FD008E7FD9 /* TabBarItemsPreferenceKey.swift in Sources */,
 				3D4FE4AA2C00F2FD008E7FD9 /* PetsView.swift in Sources */,
+				3DDF993E2C0BF2720023B03C /* PhotoPickerVM.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import SwiftData
 
 @main
 struct SpoilPetApp: App {
@@ -13,5 +14,6 @@ struct SpoilPetApp: App {
         WindowGroup {
             ContentView()
         }
+        .modelContainer(for: PetProfile.self)
     }
 }
