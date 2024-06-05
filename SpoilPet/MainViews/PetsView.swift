@@ -21,6 +21,8 @@ struct PetsView: View {
             ZStack {
                 Color.background.ignoresSafeArea()
                     List {
+                        Spacer()
+                            .listRowBackground(Color.background)
                         ForEach(pets) { pet in
                             PetCell(pet: pet)
                                 .listRowInsets(EdgeInsets())
@@ -51,11 +53,10 @@ struct PetsView: View {
 
                     //pet Button
                 if !pets.isEmpty {
-                    Button(action: {
-                        toggleSheet = true
-                    }) {
                         AddPetButtonNonAnimated()
-                    }
+                        .onTapGesture {
+                            toggleSheet = true
+                        }
                 }
             }
             .overlay {

@@ -6,9 +6,11 @@
     //
 
 import SwiftUI
+import SwiftData
 
 struct ScheduleView: View {
-    
+    @Environment(\.modelContext) var context
+
     @State var currentDate: Date = .init()
     
         // WeekSlider
@@ -18,7 +20,9 @@ struct ScheduleView: View {
     @Namespace private var animation
     
     @State private var createWeek: Bool = false
-    
+
+    @Query private var pet: [PetProfile]
+
     var body: some View {
         NavigationStack {
             ZStack {
@@ -57,8 +61,20 @@ struct ScheduleView: View {
                         //body
                     VStack {
                         WaterPetReminderView()
-                        
-                        
+
+                        //MARK: Meal View
+                        List {
+                            ForEach(pet) { pet in
+                                Text(pet.petName)
+                                    .foregroundStyle(.white)
+                            }
+                            .listRowBackground(Color.cell)
+                        }
+                        .background(Color.background)
+                        .scrollContentBackground(.hidden)
+
+                        .clipShape(.rect(cornerRadius: 10))
+
                     }
                     .padding()
                 }

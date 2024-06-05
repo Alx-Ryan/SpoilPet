@@ -41,6 +41,11 @@
 		3DDF993A2C0A62DC0023B03C /* UpdatePetDetailsSheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DDF99392C0A62DC0023B03C /* UpdatePetDetailsSheet.swift */; };
 		3DDF993C2C0BDC980023B03C /* Previewer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DDF993B2C0BDC980023B03C /* Previewer.swift */; };
 		3DDF993E2C0BF2720023B03C /* PhotoPickerVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DDF993D2C0BF2720023B03C /* PhotoPickerVM.swift */; };
+		3DDF99402C0E7E180023B03C /* AddFoodView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DDF993F2C0E7E180023B03C /* AddFoodView.swift */; };
+		3DDF99432C0F65460023B03C /* FloatingSecureField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DDF99422C0F65460023B03C /* FloatingSecureField.swift */; };
+		3DDF99452C0F65820023B03C /*  FloatingTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DDF99442C0F65820023B03C /*  FloatingTextField.swift */; };
+		3DDF99472C0F65CC0023B03C /* TextFieldModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DDF99462C0F65CC0023B03C /* TextFieldModel.swift */; };
+		3DDF99492C0FC10F0023B03C /* MealPlan.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DDF99482C0FC10F0023B03C /* MealPlan.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -76,6 +81,11 @@
 		3DDF99392C0A62DC0023B03C /* UpdatePetDetailsSheet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpdatePetDetailsSheet.swift; sourceTree = "<group>"; };
 		3DDF993B2C0BDC980023B03C /* Previewer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Previewer.swift; sourceTree = "<group>"; };
 		3DDF993D2C0BF2720023B03C /* PhotoPickerVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoPickerVM.swift; sourceTree = "<group>"; };
+		3DDF993F2C0E7E180023B03C /* AddFoodView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddFoodView.swift; sourceTree = "<group>"; };
+		3DDF99422C0F65460023B03C /* FloatingSecureField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FloatingSecureField.swift; sourceTree = "<group>"; };
+		3DDF99442C0F65820023B03C /*  FloatingTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = " FloatingTextField.swift"; sourceTree = "<group>"; };
+		3DDF99462C0F65CC0023B03C /* TextFieldModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextFieldModel.swift; sourceTree = "<group>"; };
+		3DDF99482C0FC10F0023B03C /* MealPlan.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MealPlan.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -169,6 +179,7 @@
 				3D4FE4AD2C0149DB008E7FD9 /* SettingsAppearanceView.swift */,
 				3D4FE4BA2C063E44008E7FD9 /* WaterPetReminderView.swift */,
 				3DDF99372C0A609B0023B03C /* PetCell.swift */,
+				3DDF993F2C0E7E180023B03C /* AddFoodView.swift */,
 			);
 			path = SubViews;
 			sourceTree = "<group>";
@@ -176,10 +187,12 @@
 		3D6F85262BE582DB00C12B15 /* Helpers */ = {
 			isa = PBXGroup;
 			children = (
+				3DDF99412C0F65270023B03C /* FloatingTextField */,
 				3D4FE49C2BFEBC3F008E7FD9 /* CustomTabBarFiles */,
 				3D6F85272BE582E600C12B15 /* EXT */,
 				3D4FE4B32C014B27008E7FD9 /* TempImages */,
 				3D6F85302BE5871A00C12B15 /* PetProfile.swift */,
+				3DDF99482C0FC10F0023B03C /* MealPlan.swift */,
 				3D6F85372BE589A100C12B15 /* Constants.swift */,
 				3D4FE4A32BFFE87B008E7FD9 /* CalendarHelpers.swift */,
 				3D4FE4AF2C014A6A008E7FD9 /* ViewModifiers.swift */,
@@ -200,6 +213,16 @@
 				3D4FE4A72BFFEEE1008E7FD9 /* ViewEXT.swift */,
 			);
 			path = EXT;
+			sourceTree = "<group>";
+		};
+		3DDF99412C0F65270023B03C /* FloatingTextField */ = {
+			isa = PBXGroup;
+			children = (
+				3DDF99422C0F65460023B03C /* FloatingSecureField.swift */,
+				3DDF99442C0F65820023B03C /*  FloatingTextField.swift */,
+				3DDF99462C0F65CC0023B03C /* TextFieldModel.swift */,
+			);
+			path = FloatingTextField;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -288,15 +311,19 @@
 				3DDF993C2C0BDC980023B03C /* Previewer.swift in Sources */,
 				3D4FE4AC2C014253008E7FD9 /* SettingsView.swift in Sources */,
 				3D4FE4B72C04F434008E7FD9 /* SpeciesList.swift in Sources */,
+				3DDF99402C0E7E180023B03C /* AddFoodView.swift in Sources */,
 				3D6F85292BE5834F00C12B15 /* ColorEXT.swift in Sources */,
 				3D4FE4B02C014A6A008E7FD9 /* ViewModifiers.swift in Sources */,
+				3DDF99472C0F65CC0023B03C /* TextFieldModel.swift in Sources */,
 				3D4FE4A82BFFEEE1008E7FD9 /* ViewEXT.swift in Sources */,
+				3DDF99492C0FC10F0023B03C /* MealPlan.swift in Sources */,
 				3D4FE4A62BFFEA01008E7FD9 /* DateEXT.swift in Sources */,
 				3D4FE4B52C03A33E008E7FD9 /* PetDetailsSheet.swift in Sources */,
 				3D4FE49E2BFEBCD4008E7FD9 /* TabBarItem.swift in Sources */,
 				3D4FE4AE2C0149DB008E7FD9 /* SettingsAppearanceView.swift in Sources */,
 				3D8834312BE6EC7B007764CD /* NekoImage.swift in Sources */,
 				3D4FE4BB2C063E45008E7FD9 /* WaterPetReminderView.swift in Sources */,
+				3DDF99452C0F65820023B03C /*  FloatingTextField.swift in Sources */,
 				3D4FE4B22C014AD7008E7FD9 /* SettingsBackButton.swift in Sources */,
 				3DDF993A2C0A62DC0023B03C /* UpdatePetDetailsSheet.swift in Sources */,
 				3DDF99382C0A609B0023B03C /* PetCell.swift in Sources */,
@@ -308,6 +335,7 @@
 				3D6F85382BE589A100C12B15 /* Constants.swift in Sources */,
 				3D4FE4B92C0508B6008E7FD9 /* SexList.swift in Sources */,
 				3D4FE4A22BFFE527008E7FD9 /* ScheduleView.swift in Sources */,
+				3DDF99432C0F65460023B03C /* FloatingSecureField.swift in Sources */,
 				3D4FE49B2BFEB5FD008E7FD9 /* TabBarItemsPreferenceKey.swift in Sources */,
 				3D4FE4AA2C00F2FD008E7FD9 /* PetsView.swift in Sources */,
 				3DDF993E2C0BF2720023B03C /* PhotoPickerVM.swift in Sources */,
