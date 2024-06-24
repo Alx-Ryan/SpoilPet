@@ -1,0 +1,5 @@
+# This is a comment line in the CODEOWNERS file.
+# Each line in the file consists of a file pattern followed by one or more usernames or team names.
+
+# Default owner for everything in the repo
+*       @Alx-Ryan
