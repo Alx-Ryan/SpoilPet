@@ -11,8 +11,9 @@ import PhotosUI
 
 struct AddFoodView: View {
     @Environment(\.modelContext) var context
+    @Environment(\.dismiss) var dismiss
 
-    @State var unitSelection: String = "C"
+    @State var unitSelection: String = "Cup"
     @State var portion: String = ""
     @State var foodName: String = ""
     @State var mealtime: Date = Date()
@@ -20,59 +21,31 @@ struct AddFoodView: View {
     @StateObject var photoVM = PhotoPickerVM()
 
     var body: some View {
-        ZStack{
-            ScrollView {
+        NavigationStack {
+            ZStack{
+                    ScrollView {
 
-                    //MARK: List Option
-                VStack(spacing: 20) {
-                        // Food Name
-                    foodNameCell
+                                // Food Name
+                            foodNameCell
 
-                        // Portion info
-                    portionSize
+                                // Portion info
+                            portionSize
 
-                        // Schedule
-                    HStack(alignment: .top) {
-                        VStack(spacing: 0) {
-                            HStack {
-                                Text("Schedule")
-                                Spacer()
-                                Text("+ Add Meal")
-                                    .foregroundStyle(.accent)
-                            }
-                            .padding(12)
-                            Divider()
-                            HStack {
-                                DatePicker("", selection: $mealtime, displayedComponents: .hourAndMinute)
-                                    .datePickerStyle(.compact)
-                                    .labelsHidden()
-
-                                Spacer()
-                                Text("3/4 Cup")
-                            }
-                            .padding(12)
-                        }
+                                // Schedule
+                            schedule
 
                     }
-                    .padding()
-                    .frame(maxWidth: .infinity)
-                    .background(.cell)
-                    .clipShape(.rect(cornerRadius: 15))
                 }
+                .toolbar {
+                    Button("Accept") {
+                        let meal = MealPlan(unitSelection: unitSelection, portion: portion, foodName: foodName, mealTime: mealtime)
+                        context.insert(meal)
 
-            }
+                       dismiss()
+                    }
+                }
+            .tint(.accent)
         }
-        .toolbar {
-            Button("Accept") {
-                let meal = MealPlan(unitSelection: unitSelection, portion: portion, foodName: foodName, mealTime: mealtime)
-                context.insert(meal)
-
-               // dismiss()
-            }
-        }
-        .tint(.accent)
-
-
     }
 
     private var foodNameCell: some View {
@@ -106,7 +79,7 @@ struct AddFoodView: View {
                 }
             }
             VStack(alignment: .leading) {
-                FloatingTextField($foodName, placeholder: "Name of Food")
+                FloatingTextField($foodName, contentType: .none, placeholder: "Name of Food", color: .accent)
                     .lineLimit(1)
                     .minimumScaleFactor(0.7)
             }
@@ -120,27 +93,31 @@ struct AddFoodView: View {
 
     private var portionSize: some View {
         HStack {
-            FloatingTextField($portion, contentType: .number, placeholder: "Enter Amount")
+            FloatingTextField($portion, contentType: .number, placeholder: "Enter Amount", color: .accent)
                 .padding()
                 .padding(.bottom, 4)
 
             HStack(spacing: 0) {
 
                 Picker(selection: $unitSelection) {
-                    Text("Can").tag("Can")
-                    Text("Packet(s)").tag("Packet")
-                    Text("Piece(s)").tag("Piece")
-                    Text("Tablet(s)").tag("Tablet")
-                    Text("tsp").tag("tsp")
-                    Text("tbsp").tag("tbsp")
-                    Text("Cups").tag("C")
-                    Text("Grams").tag("g")
-                    Text("Ounce").tag("Oz")
-                    Text("Pint").tag("Pt")
-                    Text("Liter").tag("L")
+                    Group {
+                        Text("Can").tag("Can")
+                        Text("Packet").tag("Packet")
+                        Text("Piece").tag("Piece")
+                        Text("Tablet").tag("Tablet")
+                        Text("tsp").tag("tsp")
+                        Text("tbsp").tag("tbsp")
+                        Text("Cup").tag("Cup")
+                        Text("Gram").tag("Gram")
+                        Text("Ounce").tag("Ounce")
+                        Text("Pint").tag("Pint")
+                        Text("Liter").tag("Liter")
+                    }
+                    .foregroundStyle(.accent)
                 } label: {
                     Text("Units")
                 }
+
                 .frame(width: 110)
                 .pickerStyle(WheelPickerStyle())
             }
@@ -148,6 +125,42 @@ struct AddFoodView: View {
         }
         .frame(maxWidth: .infinity)
         .frame(height: 120)
+        .background(.cell)
+        .clipShape(.rect(cornerRadius: 15))
+    }
+
+    private var schedule: some View {
+        HStack(alignment: .top) {
+            VStack(spacing: 0) {
+                HStack {
+                    Text("Schedule")
+                    Spacer()
+                    Text("+ Add Meal")
+                        .foregroundStyle(.accent)
+                }
+                .padding(12)
+                Divider()
+                HStack {
+                    DatePicker("", selection: $mealtime, displayedComponents: .hourAndMinute)
+                        .datePickerStyle(.compact)
+                        .labelsHidden()
+
+                    Spacer()
+                    VStack {
+                        Text(foodName)
+                            .lineLimit(2)
+                            .minimumScaleFactor(0.7)
+                        Divider().frame(width: 50)
+                        Text(portion + "  " + unitSelection)
+                    }
+                }
+                .foregroundStyle(.accent)
+                .padding(12)
+            }
+
+        }
+        .padding()
+        .frame(maxWidth: .infinity)
         .background(.cell)
         .clipShape(.rect(cornerRadius: 15))
     }

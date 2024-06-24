@@ -18,7 +18,7 @@ final class PetProfile {
     var species: Species? = nil
     var age: Int? = nil
     var weight: Int? = nil
-    var meal: [MealPlan] = []
+    var meal: [MealPlan]? = nil
 
     init(petName: String = "", petPhoto: Data? = nil, breed: String = "", sex: Sex? = nil, species: Species? = nil, age: Int? = nil, weight: Int? = nil) {
         self.petName = petName

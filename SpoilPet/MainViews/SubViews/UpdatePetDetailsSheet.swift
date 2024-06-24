@@ -22,10 +22,6 @@ struct UpdatePetDetailsSheet: View {
         // sex vars
     @State private var sex = Sex.other
     @State private var sexDropdown: Bool = false
-//    @State private var name: String = ""
-//    @State private var breed: String = ""
-//    @State private var age: Int?
-//    @State private var weight: Int?
 
     var body: some View {
         ZStack {

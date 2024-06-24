@@ -116,6 +116,7 @@
 		3D4FE4B32C014B27008E7FD9 /* TempImages */ = {
 			isa = PBXGroup;
 			children = (
+				3D6F85372BE589A100C12B15 /* Constants.swift */,
 				3D6F85352BE5896C00C12B15 /* ImageLoaderView.swift */,
 				3D8834302BE6EC7B007764CD /* NekoImage.swift */,
 			);
@@ -193,7 +194,6 @@
 				3D4FE4B32C014B27008E7FD9 /* TempImages */,
 				3D6F85302BE5871A00C12B15 /* PetProfile.swift */,
 				3DDF99482C0FC10F0023B03C /* MealPlan.swift */,
-				3D6F85372BE589A100C12B15 /* Constants.swift */,
 				3D4FE4A32BFFE87B008E7FD9 /* CalendarHelpers.swift */,
 				3D4FE4AF2C014A6A008E7FD9 /* ViewModifiers.swift */,
 				3D4FE4B12C014AD7008E7FD9 /* SettingsBackButton.swift */,

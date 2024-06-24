@@ -41,15 +41,23 @@ struct PetDetailsSheet: View {
                     
                     nameField
 
-                    speciesPicker
-                    
-                    sexPicker
-                    
+                    HStack(spacing: 8) {
+                        speciesPicker
+                        sexPicker
+                    }
+                    .padding(.horizontal)
+                    .padding(.vertical, 6)
+
                     BreedField
 
-                    AgeField
+                    HStack(spacing: 8) {
+                        AgeField
+                        WeightField
+                    }
+                    .padding(.horizontal)
+                    .padding(.vertical, 6)
 
-                    WeightField
+
                 }
             }
             .scrollIndicators(.hidden)
@@ -137,7 +145,7 @@ struct PetDetailsSheet: View {
             Image(systemName: "pawprint.circle")
                 .font(.title)
                 .padding(8)
-                .foregroundStyle(.hero)
+                .foregroundStyle(.accent)
                 .shadow(radius: 10)
                 .background(.touchPadding)
         } 
@@ -148,11 +156,15 @@ struct PetDetailsSheet: View {
         VStack(alignment: .leading, spacing: 8) {
             Text("Name")
                 .font(.headline)
-                .foregroundStyle(.hero)
+                .foregroundStyle(.accent)
             TextField(text: $name) {
                 Text("Enter Name")
                     .foregroundStyle(.text.opacity(0.5))
             }
+//            FloatingTextField($name, contentType: .name, placeholder: "Name", color: .accent)
+//                .lineLimit(1)
+//                .minimumScaleFactor(0.7)
+//                .foregroundStyle(.text.opacity(0.5))
             .font(.title2)
             .bold()
             .padding(4)
@@ -168,8 +180,8 @@ struct PetDetailsSheet: View {
         VStack(alignment: .leading, spacing: 8) {
             Text("Species")
                 .font(.headline)
-                .foregroundStyle(.hero)
-            
+                .foregroundStyle(.accent)
+
             Menu {
                 Picker(selection: $speciesSelection) {
                     ForEach(Species.allCases) { species in
@@ -184,7 +196,7 @@ struct PetDetailsSheet: View {
                 Image(systemName: "chevron.backward")
                     .font(.headline)
                     .bold()
-                    .foregroundStyle(.hero)
+                    .foregroundStyle(.accent)
                     .rotationEffect(.degrees(speciesDropdown ? -90 : 0))
                     .animation(.easeOut, value: speciesDropdown)
             }
@@ -199,15 +211,17 @@ struct PetDetailsSheet: View {
                 speciesDropdown.toggle()
             }
         }
-        .modifier(PetDetailsViewModifier())
+        .padding()
+        .background(Color.cell)
+        .clipShape(RoundedRectangle(cornerRadius: 10))
     }
     
     private var sexPicker: some View {
         VStack(alignment: .leading, spacing: 8) {
             Text("Sex")
                 .font(.headline)
-                .foregroundStyle(.hero)
-            
+                .foregroundStyle(.accent)
+
             Menu {
                 Picker(selection: $sex) {
                     ForEach(Sex.allCases) { sex in
@@ -225,7 +239,7 @@ struct PetDetailsSheet: View {
                 Image(systemName: "chevron.backward")
                     .font(.headline)
                     .bold()
-                    .foregroundStyle(Color.hero)
+                    .foregroundStyle(Color.accent)
                     .rotationEffect(.degrees(sexDropdown ? -90 : 0))
                     .animation(.easeOut, value: sexDropdown)
             }
@@ -240,14 +254,16 @@ struct PetDetailsSheet: View {
                 sexDropdown.toggle()
             }
         }
-        .modifier(PetDetailsViewModifier())
+        .padding()
+        .background(Color.cell)
+        .clipShape(RoundedRectangle(cornerRadius: 10))
     }
     
     private var BreedField: some View {
         VStack(alignment: .leading, spacing: 8) {
             Text("Breed")
                 .font(.headline)
-                .foregroundStyle(.hero)
+                .foregroundStyle(.accent)
             TextField(text: $breed) {
                 Text("Enter Breed")
                     .foregroundStyle(.text.opacity(0.5))
@@ -269,7 +285,7 @@ struct PetDetailsSheet: View {
         VStack(alignment: .leading, spacing: 8) {
             Text("Age")
                 .font(.headline)
-                .foregroundStyle(.hero)
+                .foregroundStyle(.accent)
             TextField(value: $age, format: .number) {
                 Text("Enter Age")
                     .keyboardType(.numberPad)
@@ -282,14 +298,17 @@ struct PetDetailsSheet: View {
             .clipShape(RoundedRectangle(cornerRadius: 6))
 
         }
-        .modifier(PetDetailsViewModifier())
+        .padding()
+        .background(Color.cell)
+        .clipShape(RoundedRectangle(cornerRadius: 10))
+
     }
 
     private var WeightField: some View {
         VStack(alignment: .leading, spacing: 8) {
             Text("Weight")
                 .font(.headline)
-                .foregroundStyle(.hero)
+                .foregroundStyle(.accent)
             TextField(value: $weight, format: .number) {
                 Text("Enter Weight")
                     .keyboardType(.numberPad)
@@ -302,7 +321,9 @@ struct PetDetailsSheet: View {
             .clipShape(RoundedRectangle(cornerRadius: 6))
 
         }
-        .modifier(PetDetailsViewModifier())
+        .padding()
+        .background(Color.cell)
+        .clipShape(RoundedRectangle(cornerRadius: 10))
     }
 
 //    func loadPhoto() {

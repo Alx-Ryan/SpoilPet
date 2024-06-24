@@ -11,6 +11,7 @@ import SwiftData
 struct ScheduleView: View {
     @Environment(\.modelContext) var context
 
+
     @State var currentDate: Date = .init()
     
         // WeekSlider
@@ -22,84 +23,101 @@ struct ScheduleView: View {
     @State private var createWeek: Bool = false
 
     @Query private var pet: [PetProfile]
+    @Query private var meal: [MealPlan]
 
     var body: some View {
-        NavigationStack {
-            ZStack {
-                Color.background.ignoresSafeArea()
-                
-                VStack(alignment: .leading, spacing: 0) {
-                    VStack(alignment: .leading) {
-                        
-                            // Week Slider
-                        TabView(selection: $currentWeekIndex,
-                                content:  {
-                            ForEach(weekSlider.indices, id: \.self) { index in
-                                let week = weekSlider[index]
-                                
-                                weekView(week)
-                                    .tag(index)
-                                
+            NavigationStack {
+                ZStack {
+                    Color.background.ignoresSafeArea()
+                    
+                    VStack(alignment: .leading, spacing: 0) {
+                        VStack(alignment: .leading) {
+                            
+                                // Week Slider
+                            TabView(selection: $currentWeekIndex,
+                                    content:  {
+                                ForEach(weekSlider.indices, id: \.self) { index in
+                                    let week = weekSlider[index]
+                                    
+                                    weekView(week)
+                                        .tag(index)
+                                    
+                                }
+                            })
+                            .tabViewStyle(.page(indexDisplayMode: .never))
+                            .frame(height: 90)
+                            
+                        }
+                        .padding()
+                        .frame(maxWidth: .infinity)
+                        .background {
+                            Rectangle().fill(.hero.opacity(0.8))
+                                .clipShape(.rect(bottomLeadingRadius: 30, bottomTrailingRadius: 30))
+                                .ignoresSafeArea()
+                        }
+                        .onChange(of: currentWeekIndex, initial: false) { oldValue, newValue in
+                            if newValue == 0 || newValue == (weekSlider.count - 1) {
+                                createWeek = true
                             }
-                        })
-                        .tabViewStyle(.page(indexDisplayMode: .never))
-                        .frame(height: 90)
-                        
+                        }
+                            //body
+                        VStack {
+                            WaterPetReminderView()
+
+                            //MARK: Meal View
+                            List {
+                                ForEach(pet) { pet in
+                                    
+                                    Section {
+                                        VStack {
+                                            HStack {
+                                                Text(pet.petName)
+                                                    .foregroundStyle(.hero)
+                                                Spacer()
+                                                NavigationLink("Add Meal Plan", destination: AddFoodView())
+                                            }
+                                            .foregroundStyle(.accent)
+                                            
+//                                            Text(meal)
+
+                                        }
+                                    }
+
+                                }
+                                .listRowBackground(Color.cell)
+
+                            }
+                            .background(Color.background)
+                            .scrollContentBackground(.hidden)
+
+                            .clipShape(.rect(cornerRadius: 10))
+
+                        }
+                        .padding()
                     }
-                    .padding()
+                    .vSpacing(.top)
                     .frame(maxWidth: .infinity)
-                    .background {
-                        Rectangle().fill(.hero.opacity(0.8))
-                            .clipShape(.rect(bottomLeadingRadius: 30, bottomTrailingRadius: 30))
-                            .ignoresSafeArea()
-                    }
-                    .onChange(of: currentWeekIndex, initial: false) { oldValue, newValue in
-                        if newValue == 0 || newValue == (weekSlider.count - 1) {
-                            createWeek = true
-                        }
-                    }
-                        //body
-                    VStack {
-                        WaterPetReminderView()
-
-                        //MARK: Meal View
-                        List {
-                            ForEach(pet) { pet in
-                                Text(pet.petName)
-                                    .foregroundStyle(.white)
+                    .onAppear() {
+                        if weekSlider.isEmpty {
+                            let currentWeek = Date().fetchWeek()
+                            
+                            if let firstDate = currentWeek.first?.date {
+                                weekSlider.append(firstDate.createPreviousWeek())
                             }
-                            .listRowBackground(Color.cell)
-                        }
-                        .background(Color.background)
-                        .scrollContentBackground(.hidden)
-
-                        .clipShape(.rect(cornerRadius: 10))
-
-                    }
-                    .padding()
-                }
-                .vSpacing(.top)
-                .frame(maxWidth: .infinity)
-                .onAppear() {
-                    if weekSlider.isEmpty {
-                        let currentWeek = Date().fetchWeek()
-                        
-                        if let firstDate = currentWeek.first?.date {
-                            weekSlider.append(firstDate.createPreviousWeek())
-                        }
-                        
-                        weekSlider.append(currentWeek)
-                        
-                        if let lastDate = currentWeek.last?.date {
-                            weekSlider.append(lastDate.createNextWeek())
+                            
+                            weekSlider.append(currentWeek)
+                            
+                            if let lastDate = currentWeek.last?.date {
+                                weekSlider.append(lastDate.createNextWeek())
+                            }
                         }
                     }
                 }
+                .foregroundStyle(.text)
+                .navigationTitle("Schedule")
             }
-            .foregroundStyle(.text)
-            .navigationTitle("Schedule")
         }
-    }
+    
     
         // Week View
     @ViewBuilder
