@@ -30,3 +30,31 @@ struct Previewer {
     }
 
 }
+
+
+let previewContainer: ModelContainer = {
+    do {
+            // Create the configuration
+        let configuration = ModelConfiguration(isStoredInMemoryOnly: true)
+
+            // Initialize the container with the configuration
+        let container = try ModelContainer(for: PetProfile.self, configurations: configuration)
+
+        Task { @MainActor in
+            let context = container.mainContext
+
+            let petExample = PetProfile.example()
+            context.insert(petExample)
+
+                // Save the context if needed
+            do {
+                try context.save()
+            } catch {
+                print("Failed to save context: \(error.localizedDescription)")
+            }
+        }
+        return container
+    } catch {
+        fatalError("Failed to create container with error: \(error.localizedDescription)")
+    }
+}()

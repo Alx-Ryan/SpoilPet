@@ -13,7 +13,7 @@ struct AddFoodView: View {
     @Environment(\.modelContext) var context
     @Environment(\.dismiss) var dismiss
 
-    @State var unitSelection: String = "Cup"
+    @State var unitSelection: String = "Cups"
     @State var portion: String = ""
     @State var foodName: String = ""
     @State var mealtime: Date = Date()
@@ -25,14 +25,21 @@ struct AddFoodView: View {
             ZStack{
                     ScrollView {
 
-                                // Food Name
+                            // Food Name
                             foodNameCell
 
-                                // Portion info
+                            // Portion info
                             portionSize
 
-                                // Schedule
+                            // Schedule
                             schedule
+
+                            // Meal Preview
+                        Text("Meal Preview")
+                            .font(.headline)
+                            .foregroundStyle(.accent)
+                            .padding(.top)
+                            mealPreview
 
                     }
                 }
@@ -46,6 +53,63 @@ struct AddFoodView: View {
                 }
             .tint(.accent)
         }
+    }
+
+    private var mealPreview: some View {
+        ZStack {
+            HStack {
+                VStack {
+                    if let image = photoVM.selectedImage {
+                        Image(uiImage: image)
+                            .resizable()
+                            .scaledToFill()
+                            .frame(maxWidth: 100)
+                            .frame(height: 100)
+                            .scaledToFill()
+                            .clipShape(RoundedRectangle(cornerRadius: 20))
+                    } else {
+                        Text("No Image Selected")
+                            .foregroundColor(.secondary)
+                            .font(.system(size: 20))
+                            .lineLimit(2)
+                            .minimumScaleFactor(0.8)
+                            .padding(4)
+                    }
+                }
+                .frame(maxWidth: 100)
+                .frame(height: 100)
+                .background()
+                .clipShape(RoundedRectangle(cornerRadius: 20))
+
+                VStack {
+                    Text(!foodName.isEmpty ? foodName : "Enter a food")
+                        .bold()
+                        .underline()
+                        .lineLimit(1)
+                        .minimumScaleFactor(0.8)
+                        .padding(.bottom, 4)
+                    Text(!portion.isEmpty ? portion + " " + unitSelection : "0" + " " + unitSelection)
+                }
+                .padding()
+
+                Spacer()
+
+                VStack {
+                    Text("Schedule")
+                        .bold()
+                        .underline()
+                        .padding(.bottom, 4)
+                    Text("\(mealtime.formatted(date: .omitted, time: .shortened))")
+                }
+                .padding()
+
+            }
+            .frame(maxWidth: .infinity, alignment: .leading)
+            .frame(height: 100)
+            .background(.cell)
+            .clipShape(.rect(cornerRadius: 20))
+        }
+        .foregroundStyle(.accent)
     }
 
     private var foodNameCell: some View {
@@ -101,17 +165,17 @@ struct AddFoodView: View {
 
                 Picker(selection: $unitSelection) {
                     Group {
-                        Text("Can").tag("Can")
-                        Text("Packet").tag("Packet")
-                        Text("Piece").tag("Piece")
-                        Text("Tablet").tag("Tablet")
+                        Text("Cans").tag("Cans")
+                        Text("Packets").tag("Packets")
+                        Text("Pieces").tag("Pieces")
+                        Text("Tablets").tag("Tablets")
                         Text("tsp").tag("tsp")
                         Text("tbsp").tag("tbsp")
-                        Text("Cup").tag("Cup")
-                        Text("Gram").tag("Gram")
-                        Text("Ounce").tag("Ounce")
-                        Text("Pint").tag("Pint")
-                        Text("Liter").tag("Liter")
+                        Text("Cups").tag("Cups")
+                        Text("Grams").tag("Grams")
+                        Text("Ounces").tag("Ounces")
+                        Text("Pints").tag("Pints")
+                        Text("Liters").tag("Liters")
                     }
                     .foregroundStyle(.accent)
                 } label: {

@@ -63,7 +63,6 @@ struct PetCell: View {
                     }
                 }
                 
-
                     // pet details
                 VStack(alignment: .leading, spacing: 4) {
                         // Pet name and Breed
@@ -122,27 +121,13 @@ struct PetCell: View {
             .background(RoundedRectangle(cornerRadius: 10).fill(Color.cell))
         }
     }
-
-        //    func loadPhoto() {
-        //        Task { @MainActor in
-        //            pet.petPhoto = try await selectedPhoto?.loadTransferable(type: Data.self)
-        //        }
-        //    }
-
 }
 
 #Preview {
-    do {
-        let previewer = try Previewer()
-
-        return VStack {
-            PetCell(pet: previewer.pet)
-            PetCell(pet: previewer.pet2)
-            PetCell(pet: previewer.pet3)
-        }
-        .padding()
-
-    } catch {
-        return Text("Failed to create Preview: \(error.localizedDescription)")
+    VStack {
+        PetCell(pet: PetProfile(petName: "Bella", petPhoto: nil, breed: "Cobra", sex: .female, species: .snake, age: 3, weight: 10))
+        PetCell(pet: PetProfile(petName: "Sally", petPhoto: nil, breed: "Beagle", sex: Sex.female, species: Species.dog, age: 12, weight: 23))
+        PetCell(pet: PetProfile(petName: "Max", petPhoto: nil, breed: "Bobcat", sex: Sex.male, species: Species.cat, age: 5, weight: 15))
     }
+
 }

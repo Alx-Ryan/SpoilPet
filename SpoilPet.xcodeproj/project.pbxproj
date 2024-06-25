@@ -36,6 +36,7 @@
 		3D6F85342BE5895900C12B15 /* SDWebImageSwiftUI in Frameworks */ = {isa = PBXBuildFile; productRef = 3D6F85332BE5895900C12B15 /* SDWebImageSwiftUI */; };
 		3D6F85362BE5896C00C12B15 /* ImageLoaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D6F85352BE5896C00C12B15 /* ImageLoaderView.swift */; };
 		3D6F85382BE589A100C12B15 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D6F85372BE589A100C12B15 /* Constants.swift */; };
+		3D81F0F32C2A425C0045382E /* MealCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D81F0F22C2A425C0045382E /* MealCell.swift */; };
 		3D8834312BE6EC7B007764CD /* NekoImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D8834302BE6EC7B007764CD /* NekoImage.swift */; };
 		3DDF99382C0A609B0023B03C /* PetCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DDF99372C0A609B0023B03C /* PetCell.swift */; };
 		3DDF993A2C0A62DC0023B03C /* UpdatePetDetailsSheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DDF99392C0A62DC0023B03C /* UpdatePetDetailsSheet.swift */; };
@@ -76,6 +77,7 @@
 		3D6F85302BE5871A00C12B15 /* PetProfile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PetProfile.swift; sourceTree = "<group>"; };
 		3D6F85352BE5896C00C12B15 /* ImageLoaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageLoaderView.swift; sourceTree = "<group>"; };
 		3D6F85372BE589A100C12B15 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		3D81F0F22C2A425C0045382E /* MealCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MealCell.swift; sourceTree = "<group>"; };
 		3D8834302BE6EC7B007764CD /* NekoImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NekoImage.swift; sourceTree = "<group>"; };
 		3DDF99372C0A609B0023B03C /* PetCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PetCell.swift; sourceTree = "<group>"; };
 		3DDF99392C0A62DC0023B03C /* UpdatePetDetailsSheet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpdatePetDetailsSheet.swift; sourceTree = "<group>"; };
@@ -180,6 +182,7 @@
 				3D4FE4AD2C0149DB008E7FD9 /* SettingsAppearanceView.swift */,
 				3D4FE4BA2C063E44008E7FD9 /* WaterPetReminderView.swift */,
 				3DDF99372C0A609B0023B03C /* PetCell.swift */,
+				3D81F0F22C2A425C0045382E /* MealCell.swift */,
 				3DDF993F2C0E7E180023B03C /* AddFoodView.swift */,
 			);
 			path = SubViews;
@@ -315,6 +318,7 @@
 				3D6F85292BE5834F00C12B15 /* ColorEXT.swift in Sources */,
 				3D4FE4B02C014A6A008E7FD9 /* ViewModifiers.swift in Sources */,
 				3DDF99472C0F65CC0023B03C /* TextFieldModel.swift in Sources */,
+				3D81F0F32C2A425C0045382E /* MealCell.swift in Sources */,
 				3D4FE4A82BFFEEE1008E7FD9 /* ViewEXT.swift in Sources */,
 				3DDF99492C0FC10F0023B03C /* MealPlan.swift in Sources */,
 				3D4FE4A62BFFEA01008E7FD9 /* DateEXT.swift in Sources */,
@@ -480,6 +484,7 @@
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 18.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -509,6 +514,7 @@
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 18.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

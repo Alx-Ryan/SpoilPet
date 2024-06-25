@@ -11,7 +11,7 @@ import SwiftData
 @Model
 final class MealPlan {
 
-    var unitSelection: String = "C"
+    var unitSelection: String = "Cups"
     var portion: String = ""
     var foodName: String = ""
     var mealTime: Date? = nil

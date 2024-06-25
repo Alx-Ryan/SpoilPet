@@ -78,7 +78,14 @@ struct ScheduleView: View {
                                             }
                                             .foregroundStyle(.accent)
                                             
-//                                            Text(meal)
+                                            // MealCell
+                                            if let meal = pet.meal {
+                                                ForEach(meal) { meal in
+                                                    MealCell(meal: meal)
+                                                }
+                                            } else {
+                                                Text("No meals")
+                                            }
 
                                         }
                                     }
@@ -196,4 +203,5 @@ struct ScheduleView: View {
 
 #Preview {
     ScheduleView()
+        .modelContainer(previewContainer)
 }

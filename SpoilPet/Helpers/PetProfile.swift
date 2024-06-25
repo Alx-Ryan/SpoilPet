@@ -18,7 +18,7 @@ final class PetProfile {
     var species: Species? = nil
     var age: Int? = nil
     var weight: Int? = nil
-    var meal: [MealPlan]? = nil
+    var meal: [MealPlan]?
 
     init(petName: String = "", petPhoto: Data? = nil, breed: String = "", sex: Sex? = nil, species: Species? = nil, age: Int? = nil, weight: Int? = nil) {
         self.petName = petName
@@ -28,6 +28,16 @@ final class PetProfile {
         self.species = species
         self.age = age
         self.weight = weight
+    }
+
+    static func example() -> PetProfile {
+        let petProfile = PetProfile(petName: "Sally", petPhoto: nil, breed: "Beagle", sex: Sex.female, species: Species.dog, age: 12, weight: 23)
+        let meal1 = MealPlan(unitSelection: "Cups", portion: "1", foodName: "Chicken Nuggets", mealTime: nil, foodPhoto: nil)
+        //let meal2 = MealPlan(unitSelection: "Cups", portion: "1", foodName: "Fish", mealTime: nil, foodPhoto: nil)
+        petProfile.meal = [meal1]
+        //petProfile.meal?.append(meal2)
+        return petProfile
+
     }
 
 }
