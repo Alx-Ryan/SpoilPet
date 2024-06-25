@@ -16,7 +16,7 @@ struct PetDetailsSheet: View {
     @Environment(\.dismiss) var dismiss
 
     @StateObject var photoVM = PhotoPickerVM()
-    @State private var selectedPhoto: PhotosPickerItem?
+   // @State private var selectedPhoto: PhotosPickerItem?
 
         // species vars
     @State private var speciesDropdown: Bool = false
@@ -325,13 +325,6 @@ struct PetDetailsSheet: View {
         .background(Color.cell)
         .clipShape(RoundedRectangle(cornerRadius: 10))
     }
-
-//    func loadPhoto() {
-//        Task { @MainActor in
-//            pet.petPhoto = try await selectedPhoto?.loadTransferable(type: Data.self)
-//        }
-//    }
-
 }
 
 #Preview {

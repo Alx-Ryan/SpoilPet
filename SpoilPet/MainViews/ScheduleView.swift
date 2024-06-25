@@ -63,7 +63,8 @@ struct ScheduleView: View {
                             //body
                         VStack {
                             WaterPetReminderView()
-
+                                .padding()
+                            
                             //MARK: Meal View
                             List {
                                 ForEach(pet) { pet in
@@ -71,10 +72,28 @@ struct ScheduleView: View {
                                     Section {
                                         VStack {
                                             HStack {
+                                                if let image = UIImage(data: pet.petPhoto ?? Data()) {
+                                                    Image(uiImage: image)
+                                                        .resizable()
+                                                        .scaledToFit()
+                                                        .frame(width: 50, height: 50)
+                                                        .clipShape(Circle())
+                                                } else {
+                                                    ZStack {
+                                                        Circle()
+                                                            .foregroundStyle(.hero)
+                                                        Image(systemName: "pawprint")
+                                                            .font(.title2)
+                                                            .bold()
+                                                            .foregroundStyle(.accent)
+                                                    }
+                                                    .frame(width: 50, height: 50)
+
+                                                }
                                                 Text(pet.petName)
                                                     .foregroundStyle(.hero)
                                                 Spacer()
-                                                NavigationLink("Add Meal Plan", destination: AddFoodView())
+                                                NavigationLink("Add Meal Plan", destination: AddFoodView(pet: pet))
                                             }
                                             .foregroundStyle(.accent)
                                             
@@ -100,7 +119,7 @@ struct ScheduleView: View {
                             .clipShape(.rect(cornerRadius: 10))
 
                         }
-                        .padding()
+
                     }
                     .vSpacing(.top)
                     .frame(maxWidth: .infinity)

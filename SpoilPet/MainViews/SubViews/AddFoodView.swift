@@ -13,6 +13,8 @@ struct AddFoodView: View {
     @Environment(\.modelContext) var context
     @Environment(\.dismiss) var dismiss
 
+    @Bindable var pet: PetProfile
+    
     @State var unitSelection: String = "Cups"
     @State var portion: String = ""
     @State var foodName: String = ""
@@ -45,13 +47,32 @@ struct AddFoodView: View {
                 }
                 .toolbar {
                     Button("Accept") {
-                        let meal = MealPlan(unitSelection: unitSelection, portion: portion, foodName: foodName, mealTime: mealtime)
-                        context.insert(meal)
-
-                       dismiss()
+                        addMeal()
+                        dismiss()
                     }
                 }
             .tint(.accent)
+        }
+    }
+
+    private func addMeal() {
+        let meal = MealPlan(unitSelection: unitSelection, portion: portion, foodName: foodName, mealTime: mealtime, foodPhoto: photoVM.selectedImage?.sd_imageData())
+
+            // If pet's meal array is nil, initialize it
+        if pet.meal == nil {
+            pet.meal = [meal]
+        } else {
+            pet.meal?.append(meal)
+        }
+
+            // Insert the new meal into the context
+        context.insert(meal)
+
+            // Save the context if needed
+        do {
+            try context.save()
+        } catch {
+            print("Failed to save context: \(error.localizedDescription)")
         }
     }
 
@@ -245,7 +266,7 @@ struct AddFoodView: View {
 
 #Preview {
     NavigationStack {
-        AddFoodView()
+        AddFoodView(pet: PetProfile(petName: "Bella", petPhoto: nil, breed: "Cobra", sex: .female, species: .snake, age: 3, weight: 10))
             .padding()
     }
 }
