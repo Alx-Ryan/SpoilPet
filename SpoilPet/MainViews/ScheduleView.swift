@@ -75,7 +75,7 @@ struct ScheduleView: View {
                                                 if let image = UIImage(data: pet.petPhoto ?? Data()) {
                                                     Image(uiImage: image)
                                                         .resizable()
-                                                        .scaledToFit()
+                                                        .scaledToFill()
                                                         .frame(width: 50, height: 50)
                                                         .clipShape(Circle())
                                                 } else {
