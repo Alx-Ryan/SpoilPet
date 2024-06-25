@@ -23,7 +23,7 @@ struct WaterPetReminderView: View {
                 .foregroundStyle(.text)
         }
         .frame(maxWidth: .infinity)
-        .frame(height: 80)
+        .frame(height: 40)
     }
 }
 
